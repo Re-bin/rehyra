@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "autocorrelation_first",
+  "contract": {
+    "objective": "minimize C1",
+    "metric": "public-compatible linear autoconvolution",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "ac1-heldout-state-fixed-001",
+    "harness_git_commit": "6ea1993a34ce9d6c5bdeb4a78018ab01802d6baf",
+    "harness_tree_sha256": "c59f3a3938fc1a0cb856f822c9c2ca3f95c8698704f229f99b9fd41f4c020ce4",
+    "maximum_proposals": 4,
+    "maximum_concurrency": 1,
+    "context_calls": 5,
+    "qualified_proposals": 3,
+    "failed_proposals": 1,
+    "failure_note": "attempt-0002 records the DNS infrastructure outage and consumed its frozen proposal slot",
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "TTT-Discover published predecessor",
+    "construction_sha256": "6fb4f3b440d31af3463c2b86da671a6aab75290bb9be217173c3ab8a2c4a754a",
+    "sequence_length": 30000,
+    "c1": 1.5028628982558268,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0004",
+    "candidate_source_sha256": "bcb2c02f259c22cab1104368e0cd3f353737862672c35ef588700871d06d88f9",
+    "construction_sha256": "194b72b1b8076ad1b005eb2d5e03c91601d5ef4bf60c87a90c56e218c5279a94",
+    "sequence_length": 30000,
+    "minimum": 0.0,
+    "maximum": 0.003718513451676608,
+    "sum": 1.0,
+    "c1": 1.5028628243951712,
+    "absolute_improvement_over_seed": 7.386065559167321e-8,
+    "relative_improvement_over_seed_percent": 0.000004914663587207713,
+    "qualified": true
+  },
+  "public_hyra_artifact": {
+    "repository_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+    "c1": 1.502850302071008,
+    "absolute_gap": 0.000012522324163155574,
+    "relative_gap_percent": 0.0008332382903208924,
+    "matched_or_exceeded": false
+  },
+  "verification": {
+    "frozen_search_evaluator": {
+      "passed": true,
+      "c1": 1.5028628243951712
+    },
+    "independent_numpy_fft": {
+      "passed": true,
+      "c1": 1.5028628243951705
+    },
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 36
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 9,
+      "audited_transcript_count": 9,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    }
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 343994,
+      "cached_input_tokens": 248576,
+      "output_tokens": 15650,
+      "reasoning_output_tokens": 9178
+    },
+    "proposal": {
+      "input_tokens": 2226277,
+      "cached_input_tokens": 1991424,
+      "output_tokens": 46770,
+      "reasoning_output_tokens": 19257
+    }
+  },
+  "integrity": {
+    "config_sha256": "5d2c75da4f4ba933e896e79e0a78ffaeb261fa75509aaf666d2e2d0490797e20",
+    "task_sha256": "fec8923dad909b6cd320c442a863f487ce87bb58e59212cafc33e77c644cdca7",
+    "preregistration_sha256": "045c8c29f48b0aa95731b4875a7a0466d9908e80b6ff78f8ba0bf0be6ceb6121",
+    "report_sha256": "19841a993936ba131fd49b8ccd7a88404711d572756743c3b2e1bd8a8f438e4c",
+    "events_sha256": "69ba949a6f486816426e7077a3918af0a7853bd57dc6d880934074943b4bf067"
+  },
+  "verdict": "The state-fixed four-Proposal campaign made three successive, independently verified improvements over the pinned predecessor, but the absolute gain was too small to match the public Hyra artifact."
+}

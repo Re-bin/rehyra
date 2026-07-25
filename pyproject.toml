@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rehyra"
+version = "0.3.0"
+description = "Open, clean-room implementation of Hyra's recursive discovery loop"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Re-bin/rehyra"
+Repository = "https://github.com/Re-bin/rehyra"
+Documentation = "https://github.com/Re-bin/rehyra/tree/main/benchmarks/docs"
+
+[project.optional-dependencies]
+science = [
+  "numpy>=1.26",
+  "psutil>=5.9",
+  "scipy>=1.10",
+]
+qubit-replay = [
+  "numpy>=1.26",
+  "psutil>=5.9",
+  "qiskit==1.2.0",
+  "qiskit-qasm3-import==0.6.0",
+  "scipy>=1.10",
+]
+
+[project.scripts]
+rehyra = "rehyra.cli:main"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["rehyra*", "benchmarks*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+"benchmarks.tasks.simpletes" = ["verify_sums_exact.cpp"]

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "evidence_level": "cold_start_discovery",
+  "run_name": "sums-diffs-codex-public-spec",
+  "task": "sums_diffs",
+  "contract": {
+    "source": "SimpleTES",
+    "maximum_elements": 512,
+    "objective": "maximize c_a",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "search": {
+    "context_calls": 3,
+    "proposal_calls": 4,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 2332.576024
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "c_a": 1.0597930945472454
+  },
+  "best": {
+    "attempt_id": "attempt-0001",
+    "c_a": 1.093350418957016,
+    "set_size": 469,
+    "sumset_size": 4746,
+    "diffset_size": 3895,
+    "qualified": true
+  },
+  "relative_improvement_percent": 3.166403384059291,
+  "usage": {
+    "context": {
+      "input_tokens": 86406,
+      "cached_input_tokens": 20224,
+      "output_tokens": 5659,
+      "reasoning_output_tokens": 3845
+    },
+    "proposal": {
+      "input_tokens": 3969073,
+      "cached_input_tokens": 3718400,
+      "output_tokens": 67140,
+      "reasoning_output_tokens": 27152
+    }
+  },
+  "integrity": {
+    "source_commit_before_run": "c1a658fa37990131fd706e57712d5bd7f9ef6d6a",
+    "config_sha256": "48a839fe8aed70b41481548588288df2e40388b916b316c9e9f84a3467b8a68a",
+    "task_sha256": "d01368bf5dce336c414129f59256018e2d1593501f277ea90a3e37ef89bccbad",
+    "report_sha256": "a4e4fd0afd17780a957d86faf3454e37cd906b3f2ba624eb3b728845714c8c1c",
+    "events_sha256": "b1e73144b95865c53aae661d5ef49197b6d6989e1e8bbd4fb4e62aace38cc432",
+    "offline_validation": "passed"
+  },
+  "comparison_note": "The public Hyra artifact scores 1.1597147989125474 but contains 181131 elements. It is outside this frozen 512-element search contract and is not a valid cold-start baseline comparison."
+}

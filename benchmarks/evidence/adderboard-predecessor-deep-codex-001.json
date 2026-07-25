@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search_with_immutable_continuation_and_full_confirmation",
+  "task": "adderboard-trained",
+  "runs": [
+    "adderboard-isolated-source-frozen-004",
+    "adderboard-predecessor-deep-001"
+  ],
+  "contract": {
+    "predecessor": "public M10S trained 36-parameter artifact",
+    "objective": "minimize unique trainable parameters",
+    "qualification": "at least 99% accuracy on public and each shadow seed",
+    "isolation": "local_process_advisory",
+    "manual_final_review_required": true
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools_policy": "disabled"
+  },
+  "search": {
+    "context_calls": 10,
+    "proposal_calls": 12,
+    "maximum_concurrency": 2,
+    "wall_time_seconds": 8005.569,
+    "improvement_lineage": [
+      36,
+      35,
+      34,
+      33
+    ],
+    "timed_out_proposals": 2,
+    "deep_run_qualified_attempts_including_seed": 7,
+    "deep_run_result": "no proposal improved the imported 33-parameter incumbent"
+  },
+  "immutable_continuation": {
+    "source_run": "adderboard-isolated-source-frozen-004",
+    "source_attempt_id": "attempt-0004",
+    "source_attempt_sha256": "a9cd842e23f9305df8797cf58730aa32174c72348c93047f6447181c4c4f952d",
+    "imported_tree_sha256": "28d728fc4d6197321ba70e4d5d9c1d69038e3315a1fac7828265cd7ace4baa67",
+    "deep_incumbent_attempt_id": "attempt-0000"
+  },
+  "best": {
+    "actual_parameters": 33,
+    "declared_parameters": 33,
+    "direct_input_addition_detected": false,
+    "metadata_matches_actual": true,
+    "nonstandard_fixed_buffers": [],
+    "qualified": true
+  },
+  "full_confirmation": {
+    "public": {
+      "seed": 2025,
+      "passed": 9999,
+      "total": 10010,
+      "accuracy": 99.8901098901099,
+      "qualified": true
+    },
+    "shadow": [
+      {
+        "seed": 100003,
+        "passed": 10001,
+        "total": 10010,
+        "accuracy": 99.91008991008991,
+        "qualified": true
+      },
+      {
+        "seed": 100019,
+        "passed": 10001,
+        "total": 10010,
+        "accuracy": 99.91008991008991,
+        "qualified": true
+      }
+    ]
+  },
+  "public_hyra_artifact": {
+    "actual_parameters": 15,
+    "matched_or_exceeded": false,
+    "remaining_parameter_gap": 18
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 1026498,
+      "cached_input_tokens": 715776,
+      "output_tokens": 36751,
+      "reasoning_output_tokens": 26396
+    },
+    "proposal": {
+      "input_tokens": 21274546,
+      "cached_input_tokens": 20320768,
+      "output_tokens": 156384,
+      "reasoning_output_tokens": 47261
+    }
+  },
+  "integrity": {
+    "source_evidence_sha256": "68492439ecb10a13fd7bd83b51530d0f98a8ddd5184ecd66c4bc5dba430f286d",
+    "deep_config_sha256": "78275f75014c603e3679bd591f51acc286bb500dcdb9d69c56525fa03c625ccf",
+    "deep_task_sha256": "7c9e0c31db176ca775920a3deb244b0553b34c27c66c8cf1090dc474c9bdff1a",
+    "deep_preregistration_sha256": "963fea8529f0e10337d19041c6b6219849875f9710cef3cb105577664357f2f9",
+    "deep_report_sha256": "3769e0dcc80f9fe8eee50043a4e7af479ee5ebcc12931fdbd06d83986f313bc6",
+    "deep_events_sha256": "9541cb4cd5f5b776ea6420f9163bf855e011525cff67799ada551e037e1facc8",
+    "source_offline_validation": "passed",
+    "deep_offline_validation": "passed",
+    "agent_audit": "passed"
+  },
+  "comparison_note": "Across twelve autonomous proposals, the public-spec loop reduced the frozen 36-parameter predecessor to a full-confirmed 33-parameter artifact and then preserved that incumbent through an eight-proposal immutable continuation. It did not match Hyra's 15-parameter artifact; trained-category legitimacy still requires final manual review."
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "evidence_level": "final_artifact_warm_start_with_sealed_confirmation",
+  "task": "sunspot_symbolic",
+  "contract": {
+    "search_feedback_era": "1932-1978",
+    "sealed_confirmation_era": "1979-2025",
+    "objective": "maximize 24-month rolling-origin R2",
+    "candidate_count": 1,
+    "isolation": "local_process_advisory",
+    "contamination_warning": "Both eras are public historical data in 2026. Filesystem causality does not prove the model lacked pretraining knowledge of the confirmation era."
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "sunspot-hyra-final-smoke-001",
+    "harness_git_commit": "8751958d250114d49929e8138928bea2c0eefdd7",
+    "harness_tree_sha256": "a996fafd8beb91ce1363e83318d335c0de4806f29ba8675613a7bb95ce2f5435",
+    "maximum_proposals": 1,
+    "maximum_concurrency": 1,
+    "context_calls": 1,
+    "qualified_proposals": 1,
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "Tencent Hyra public final artifact",
+    "artifact_sha256": "9d113294f3420ab2a69e9e4e953304a9b5c05ffe89a8cb8525294ea1bf28ede1",
+    "visible_r2": 0.7663691741271866,
+    "visible_penalized_score": 0.7059461924537581,
+    "confirmation_r2": 0.7796665159643883,
+    "qualified": true
+  },
+  "candidate": {
+    "attempt_id": "attempt-0001",
+    "artifact_sha256": "b0bce52f28fc51f2b929a34d7df225b7d26bff7ba0c05c0397c8ffbeedbba828",
+    "expression": "a + b0*x1 + b1*(x2+x3+x4+x5+x6+x7+x8+x9+x10+x11+x12) + b2*(x17+x19+x21+x23+x25+x27+x29) + b3*(x96+x100+x104+x108+x112)",
+    "params": {
+      "a": 2.278006357055154,
+      "b0": 0.600416523493231,
+      "b1": 0.040472898672734,
+      "b2": -0.018800427206448,
+      "b3": 0.010891420200188
+    },
+    "visible_r2": 0.7555926113420035,
+    "visible_penalized_score": 0.699354811723874,
+    "confirmation_r2": 0.7879178642802538,
+    "confirmation_penalized_score": 0.7629178642802538,
+    "absolute_confirmation_improvement": 0.008251348315865492,
+    "relative_confirmation_improvement_percent": 1.0583176456743448,
+    "qualified": true
+  },
+  "decision": {
+    "search_incumbent_attempt_id": "attempt-0000",
+    "search_incumbent_reason": "The candidate was worse on the visible search era.",
+    "confirmation_winner_attempt_id": "attempt-0001",
+    "confirmation_policy": "Both the seed and the only generated candidate were evaluated once after the one-Proposal run. Confirmation scores were not fed back into search."
+  },
+  "verification": {
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 7
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 2,
+      "audited_transcript_count": 2,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    },
+    "confirmation_evaluator": "tasks.hyra_artifacts.verify.verify_sunspot using the pinned public srfit implementation"
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 61658,
+      "cached_input_tokens": 41216,
+      "output_tokens": 2134,
+      "reasoning_output_tokens": 1265
+    },
+    "proposal": {
+      "input_tokens": 654446,
+      "cached_input_tokens": 600576,
+      "output_tokens": 10016,
+      "reasoning_output_tokens": 4335
+    }
+  },
+  "integrity": {
+    "config_sha256": "c1b984b031adcc98582782a8629320ef6af13ce7879e8e268c39f71d6656e487",
+    "task_sha256": "c5ac551bd41725c22cce17e1f16e55032547d0cc52782bddfe9fc51132e2b1cf",
+    "preregistration_sha256": "0244fcd2fac5aa3326d008ca62e1b7a9deae46e88bacc140ef2a8ee85edd63f3",
+    "report_sha256": "ca53f2b392a6e6610d96541ac3671e0daa419652400a4812ee89d5605f143fdf",
+    "events_sha256": "5fb5450dde2bd85c0b2e2fdc04635506ae4499c2992c8d855aa06f8130bba4fc"
+  },
+  "verdict": "The single generated coefficient refit was not selected by visible-era search, yet its one-time sealed-era confirmation score exceeded the public Hyra artifact by 1.058%. This is a useful causal-filesystem result but not a clean model-generalization claim because the complete historical series is public."
+}

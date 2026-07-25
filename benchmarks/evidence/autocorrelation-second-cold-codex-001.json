@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "evidence_level": "cold_start_discovery_under_current_contract",
+  "run_name": "autocorrelation-second-codex-public-spec",
+  "task": "autocorrelation_second",
+  "contract": {
+    "source": "SimpleTES",
+    "objective": "maximize r",
+    "isolation": "local_process_advisory",
+    "comparison_warning": "The public Hyra vector exceeds the current SimpleTES per-element cap. Its normalized artifact replay and this executable search are not the same candidate contract."
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "search": {
+    "context_calls": 1,
+    "proposal_calls": 2,
+    "successful_proposal_calls": 1,
+    "timed_out_proposal_calls": 1,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 2129.597991
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "r": 0.9050150193435917,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0002",
+    "r": 0.9162089685905763,
+    "qualified": true
+  },
+  "relative_improvement_percent": 1.2368799420703125,
+  "public_hyra_artifact": {
+    "normalized_replay_r": 0.9629011010961755,
+    "numeric_gap": 0.046692132505599226,
+    "candidate_below_target_percent": 4.849109888071005,
+    "matched_by_cold_search": false,
+    "contract_compatible": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 163681,
+      "cached_input_tokens": 150784,
+      "output_tokens": 5218,
+      "reasoning_output_tokens": 3428
+    },
+    "successful_proposal": {
+      "input_tokens": 2572998,
+      "cached_input_tokens": 2479616,
+      "output_tokens": 21972,
+      "reasoning_output_tokens": 9330
+    },
+    "timed_out_proposal_usage": "provider emitted no terminal usage record"
+  },
+  "integrity": {
+    "config_sha256": "ccca32d6da8ff552989376630b321d6c74b384c135b8a30df0240070809d68c9",
+    "task_sha256": "d65eacdb8a29627c1d138472cfac7032d51d496dff61c3e2b913ab6cd86407fb",
+    "preregistration_sha256": "fd75173db870bb27eff9e63961d07a0fd95a0c6907389b4e5e134e4854a32242",
+    "report_sha256": "08ac596fbc88ef0f845a8487400b592061b055ccacca66175deb06ca24a6f9a1",
+    "events_sha256": "366b2c2588724a00891450cb4492f31918f7de7d56542c5b1dd3d29b4405cd69",
+    "offline_validation": "passed"
+  },
+  "comparison_note": "One Proposal exceeded the frozen 1800-second Agent budget and was retained as a failed attempt. The successful Proposal independently improved the seed but did not reach the public artifact's normalized score; the candidate contracts also differ."
+}

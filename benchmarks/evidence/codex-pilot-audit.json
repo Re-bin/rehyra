@@ -1,0 +1,105 @@
+{
+  "experiment": "adderboard-codex-hyra-like-pilot",
+  "status": "completed_and_audited",
+  "isolation": "advisory",
+  "timing": {
+    "started_at": "2026-07-23T13:46:49.895806+00:00",
+    "completed_at": "2026-07-23T14:12:00.475316+00:00",
+    "wall_clock_seconds": 1510.57951
+  },
+  "pinned_inputs": {
+    "adderboard_commit": "07061de8d833d04e9800a009721731586e102aef",
+    "m10s_commit": "a05e46ed449e064081ea9f40a3a132b798ac965d",
+    "config_sha256": "b4a00fc7f1f9a581af12a0a1dbc282e6bcf88cc2877fbeda864f026ccbd5eca1",
+    "task_sha256": "d68119676e99c13d3e5dbb4c9be7d1ceaf2d2dfbb198a83fc5e155e2b2a2038f",
+    "report_sha256": "18e452f25264706a77b740554c2bcceef4b4bce490b3a3b0e7d79bebb8d4eaa6"
+  },
+  "schedule": {
+    "proposal_count": 4,
+    "max_concurrency": 2,
+    "context_call_count": 3,
+    "explanation": "the producer refilled one queue slot as each first-wave proposal completed"
+  },
+  "usage": {
+    "proposal": {
+      "input_tokens": 8367415,
+      "cached_input_tokens": 7949824,
+      "output_tokens": 81847,
+      "reasoning_output_tokens": 24728
+    },
+    "context": {
+      "input_tokens": 60370,
+      "output_tokens": 2015,
+      "reasoning_output_tokens": 704
+    }
+  },
+  "raw_verifier_curve": [
+    {
+      "attempt_id": "attempt-0000",
+      "parameters": 36,
+      "pilot_accuracy_min": 100.0,
+      "workspace_tree_sha256": "fe0c8170a571b7793604a2391ef1b24f6b385a44839e7a3a6001d880c06a2eb9",
+      "submission_sha256": "e7b4f813b15590be1c0a44077f248becf7cf2b701d6d66de5dab20dfad2efabc",
+      "audit_class": "public_trained_seed"
+    },
+    {
+      "attempt_id": "attempt-0001",
+      "parameters": 34,
+      "pilot_accuracy_min": 99.80392156862746,
+      "workspace_tree_sha256": "7d0145a3f7f3d5902c98cc9164102984b53d94ff200123ea3bc8d41e4acb139b",
+      "submission_sha256": "c51a3a268d3676b3ed433f60e99606295daf9bee3fe639147eca05096921566e",
+      "audit_class": "hybrid_manual_review",
+      "audit_reason": "two learned query entries were replaced by fixed -1 buffers"
+    },
+    {
+      "attempt_id": "attempt-0002",
+      "parameters": 31,
+      "pilot_accuracy_min": 100.0,
+      "workspace_tree_sha256": "6a1624bc036dbb47bd6e16ddc8eead44b4ee826cf40d5bfa8bbfa456552efd4f",
+      "submission_sha256": "ba253087d72674eb077cc3b1f8d36be282ec0ea5803a3567f1f178941528f3e0",
+      "audit_class": "hybrid_manual_review",
+      "audit_reason": "five geometry constants were calibrated from the parent and stored as fixed buffers"
+    },
+    {
+      "attempt_id": "attempt-0003",
+      "parameters": 28,
+      "pilot_accuracy_min": 100.0,
+      "workspace_tree_sha256": "7bac7bb7ec67f35d582914ff4787d0677364d6598f6442134fead81c1ab9668b",
+      "submission_sha256": "27e922c249d23aeb21a744fd4370b3ae19d0d985deb33095183f089c4deedf4e",
+      "audit_class": "hybrid_manual_review",
+      "audit_reason": "seven calibrated floating buffers; selected checkpoint remained at step zero"
+    },
+    {
+      "attempt_id": "attempt-0004",
+      "parameters": 24,
+      "pilot_accuracy_min": 100.0,
+      "workspace_tree_sha256": "042c3dbb4dff3b544a102ab389afb859cd84fa4381c903b61692c16dcad564e1",
+      "submission_sha256": "15a2e639e369d47c863462456f57092da1c9bc17cacaa2867da17a4333b7089d",
+      "audit_class": "hybrid_manual_review",
+      "audit_reason": "seven trained normalization scalars were moved to fixed buffers"
+    }
+  ],
+  "independent_full_verification": {
+    "attempt-0003": {
+      "parameters": 28,
+      "passed": 29986,
+      "total": 30030,
+      "qualified_on_all_three_seeds": true,
+      "minimum_accuracy": 99.84015984015984
+    },
+    "attempt-0004": {
+      "parameters": 24,
+      "passed": 30026,
+      "total": 30030,
+      "qualified_on_all_three_seeds": true,
+      "minimum_accuracy": 99.98001998001999
+    }
+  },
+  "audited_conclusion": {
+    "raw_verifier_best_parameters": 24,
+    "trained_category_best_from_this_four_proposal_pilot": null,
+    "clean_best_across_smoke_and_pilot_parameters": 35,
+    "clean_best_source": "codex-smoke-35p-full-verification.json",
+    "interpretation": "the asynchronous loop is operational, but the original score-only feedback path Goodharted the trained-parameter objective; the separate 35p gauge candidate remains the clean result"
+  }
+}

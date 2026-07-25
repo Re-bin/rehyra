@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "autocorrelation_first",
+  "contract": {
+    "predecessor_source": "TTT-Discover",
+    "predecessor_source_commit": "6c40e82dab9d5de7416ac873ad5cd3106084aaed",
+    "evaluator_source": "SimpleTES",
+    "evaluator_source_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+    "metric": "public-compatible FFT first autocorrelation constant",
+    "objective": "minimize C1",
+    "sequence_length": 30000,
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "campaigns": [
+      "ac1-predecessor-source-frozen-001",
+      "ac1-predecessor-deep-001"
+    ],
+    "context_calls": 8,
+    "proposal_calls": 10,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 6713.834003,
+    "qualified_proposals": 9,
+    "failed_proposals": 1
+  },
+  "seed": {
+    "construction": "results/mathematics/ttt_ac1_sequence.json",
+    "construction_sha256": "ccb00dad316aef984812f538b8ce0a5eac3ccbf379d9265788d6d3c8626715e6",
+    "c1": 1.5028628982558268,
+    "qualified": true
+  },
+  "best": {
+    "run": "ac1-predecessor-deep-001",
+    "attempt_id": "attempt-0007",
+    "c1": 1.5028626540159846,
+    "qualified": true,
+    "absolute_improvement": 2.4423984212873506e-7,
+    "relative_improvement_percent": 1.6251638283983973e-5
+  },
+  "public_hyra_artifact": {
+    "c1": 1.502850302071,
+    "absolute_gap": 1.2351944984612118e-5,
+    "candidate_above_target_percent": 0.0008219012211389613,
+    "matched_or_exceeded": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 745979,
+      "cached_input_tokens": 516608,
+      "output_tokens": 27161,
+      "reasoning_output_tokens": 17224
+    },
+    "proposal": {
+      "input_tokens": 11061645,
+      "cached_input_tokens": 10431744,
+      "output_tokens": 155801,
+      "reasoning_output_tokens": 60952
+    }
+  },
+  "integrity": {
+    "source": {
+      "config_sha256": "aede5451232763db1270dca7a12b8da2f4703e6c4e0a9c0481c695186d3567fe",
+      "task_sha256": "fec8923dad909b6cd320c442a863f487ce87bb58e59212cafc33e77c644cdca7",
+      "preregistration_sha256": "19340f48a3890f7a7bf99541eab5c15b631ef6d67d74fb4efabd00641d688943",
+      "report_sha256": "88d607c525c7432008c558f1be41d9eb3de4c26865627440157f7a0657fc1305",
+      "events_sha256": "8de12c825f16d1ae69838c95a1e327f62127ff764eabcb9dc52444be0337a07b"
+    },
+    "deep": {
+      "config_sha256": "dc4bbd0ddbe570a6d4c490a6c044c2cff7c9ead8751a574b98cce3879b3a2616",
+      "task_sha256": "fec8923dad909b6cd320c442a863f487ce87bb58e59212cafc33e77c644cdca7",
+      "preregistration_sha256": "5327e01abb205083d12cfc5182087639f422e33a14d6619bfcd83e448e458908",
+      "report_sha256": "fcd0c5e67e2805c2f488b28a4829fcf776ede5b99233c9fef532aa0fcc43bbe6",
+      "events_sha256": "9f96b0aafc6fd82a3fdebf75999755133702f846edcd899b2492924186b13526",
+      "source_attempt_sha256": "a7e80cb9d58c859d36feaca752486059031eb0274ff552d7a3d868117beed765",
+      "imported_workspace_tree_sha256": "4d75e675fc254febaa0f4b07a48fa04883a022184819468d2027f620241a97b3",
+      "offline_validation": "passed",
+      "agent_evidence_audit": "passed"
+    }
+  },
+  "verdict": "The public-spec loop produced a monotonic, independently evaluated improvement over the pinned predecessor, but the ten-proposal campaign did not reproduce Hyra's published C1."
+}

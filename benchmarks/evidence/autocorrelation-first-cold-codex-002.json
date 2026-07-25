@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "evidence_level": "cold_start_discovery",
+  "run_name": "autocorrelation-first-codex-public-spec",
+  "task": "autocorrelation_first",
+  "contract": {
+    "source": "SimpleTES",
+    "objective": "minimize c1",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "search": {
+    "context_calls": 1,
+    "proposal_calls": 2,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 2307.673947
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "c1": 1.5247906292742053,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0002",
+    "c1": 1.5146128419134344,
+    "qualified": true
+  },
+  "relative_improvement_percent": 0.6674875333943714,
+  "public_hyra_artifact": {
+    "c1": 1.502850302071008,
+    "absolute_gap": 0.011762539842426367,
+    "candidate_above_target_percent": 0.7826820692797519,
+    "matched_by_cold_search": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 39203,
+      "cached_input_tokens": 18176,
+      "output_tokens": 2449,
+      "reasoning_output_tokens": 1556
+    },
+    "proposal": {
+      "input_tokens": 1081421,
+      "cached_input_tokens": 992000,
+      "output_tokens": 20775,
+      "reasoning_output_tokens": 7979
+    }
+  },
+  "integrity": {
+    "config_sha256": "aede5451232763db1270dca7a12b8da2f4703e6c4e0a9c0481c695186d3567fe",
+    "task_sha256": "47a6b2d9d289bb148c4923f163d6cfb196e80bc938a1305daa2eaad0870579e4",
+    "preregistration_sha256": "145f4fdbccd7f5ad5b1d4663123d7dd5c92cea6eb988da611cfd1c8ddf3dff99",
+    "report_sha256": "e4a34ae60bb05f47946ecc60e064b7da3486f85f290fdf0e00c97aaa10465e93",
+    "events_sha256": "dd6f50bd4dff4ee0abcf940ab4b50023c431bb7f15d42b661c2dfa3189ba2c05",
+    "offline_validation": "passed"
+  },
+  "comparison_note": "The two-proposal cold run autonomously improved the original seed but did not equal or exceed the independently replayed public Hyra artifact."
+}

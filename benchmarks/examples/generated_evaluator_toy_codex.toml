@@ -1,0 +1,15 @@
+[run]
+name = "generated-evaluator-toy-codex"
+task_spec = "generated_evaluator_toy/task.json"
+max_proposals = 2
+max_concurrency = 1
+queue_target = 1
+context_batch_size = 1
+evaluator_cycles = 2
+
+[agent]
+backend = "codex"
+model = "gpt-5.6-sol"
+reasoning_effort = "high"
+context_timeout_seconds = 900
+proposal_timeout_seconds = 900

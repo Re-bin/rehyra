@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "erdos_min_overlap",
+  "contract": {
+    "objective": "minimize C5",
+    "metric": "upstream exact scaled linear correlation",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "erdos-heldout-state-fixed-001",
+    "harness_git_commit": "4ce397d0e61136c2a9a4425b298a715297f64959",
+    "harness_tree_sha256": "c9f1a15ced4155aa9988f1c011636068868038b25069bb4fa835346e0bd89631",
+    "maximum_proposals": 4,
+    "maximum_concurrency": 1,
+    "context_calls": 4,
+    "qualified_proposals": 4,
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "SimpleTES published predecessor",
+    "captured_state_sha256": "f6a4a4cc78e38ec187247ff34eb08f1227d7508b247d1a9cc15437bf53645cee",
+    "sequence_length": 2400,
+    "c5": 0.38086767582732667,
+    "qualified": true
+  },
+  "proposals": [
+    {
+      "attempt_id": "attempt-0001",
+      "title": "Exact active-shift trust-region refinement",
+      "c5": 0.3808675289663424,
+      "qualified": true
+    },
+    {
+      "attempt_id": "attempt-0002",
+      "title": "Scale-normalized active-shift LP continuation",
+      "c5": 0.3808674981608905,
+      "qualified": true
+    },
+    {
+      "attempt_id": "attempt-0003",
+      "title": "Second-order nullspace escape from the active-shift plateau",
+      "c5": 0.3808674986701147,
+      "qualified": true
+    },
+    {
+      "attempt_id": "attempt-0004",
+      "title": "Runtime-safe normalized LP warm continuation",
+      "c5": 0.38086749819714655,
+      "qualified": true
+    }
+  ],
+  "best": {
+    "attempt_id": "attempt-0002",
+    "workspace_tree_sha256": "9da0a70fe21f3a0cd431a8fbee049b2499b89c206172d4ac882761744daa7da9",
+    "candidate_source_sha256": "4a78e4d054e84ce7cb79ce1c4b1ec4c3d7d80d43ee6eee0ea3dcf94e9331a829",
+    "captured_state_sha256": "b2ea51f350ee36fd4f4cfe7b3f05f59b41138606f819eb3d865346c7293c4f69",
+    "sequence_length": 2400,
+    "minimum": 3.3068166260807885e-18,
+    "maximum": 1.0,
+    "sum": 1200.0,
+    "c5": 0.3808674981608905,
+    "absolute_improvement_over_seed": 1.776664361741176e-7,
+    "relative_improvement_over_seed_percent": 0.000046647811681101,
+    "qualified": true
+  },
+  "public_hyra_artifact": {
+    "repository_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+    "c5": 0.38085942236531434,
+    "absolute_gap": 0.000008075795576156786,
+    "relative_gap_percent": 0.0021204137542409573,
+    "matched_or_exceeded": false
+  },
+  "verification": {
+    "frozen_search_evaluator": {
+      "passed": true,
+      "c5": 0.3808674981608905
+    },
+    "independent_numpy_correlate": {
+      "passed": true,
+      "c5": 0.38086749816089044
+    },
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 38
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 8,
+      "audited_transcript_count": 8,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    }
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 721753,
+      "cached_input_tokens": 583424,
+      "output_tokens": 24893,
+      "reasoning_output_tokens": 13774
+    },
+    "proposal": {
+      "input_tokens": 3397232,
+      "cached_input_tokens": 3139072,
+      "output_tokens": 60164,
+      "reasoning_output_tokens": 24079
+    }
+  },
+  "integrity": {
+    "config_sha256": "110fef7e4365008afb69643ed731860db59c7b05b8668ba8b02bc42e1700da89",
+    "task_sha256": "2968fd0600901667af1ee885d3a6031fb1fee22fa96b83f7fe0687b6114de995",
+    "preregistration_sha256": "48f23b3095c3c150f9f508bcdd8f6db0c1e4659aabe79308fc554edc8f607614",
+    "run_sha256": "5615487e254f591d2e29c8ba73bbb4ccfe07a1ed8225e8ad243c6f4ce7c3b47b",
+    "report_sha256": "a550c461c68943448653cd9bddb1a737bde74efcaab74d7636ca882c3770a688",
+    "events_sha256": "596d31d0970af1243d2452dd99a36778e14d573ae19058775a8135d3fda64540"
+  },
+  "verdict": "The four-Proposal campaign made two consecutive verified improvements, rejected a more complex second-order regression, and used that failure to return to the stronger normalized-LP direction. The final incumbent is independently reproduced and improves the predecessor, but remains 0.002120% above the public Hyra artifact."
+}

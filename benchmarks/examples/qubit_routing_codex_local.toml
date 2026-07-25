@@ -1,0 +1,15 @@
+[run]
+name = "qubit-routing-codex-public-spec-local-calibrated"
+task_spec = "../../task-data/low-cost-science/qubit_routing/task.json"
+max_proposals = 4
+max_concurrency = 2
+queue_target = 2
+context_batch_size = 2
+evaluator_cycles = 1
+
+[agent]
+backend = "codex"
+model = "gpt-5.6-sol"
+reasoning_effort = "high"
+context_timeout_seconds = 900
+proposal_timeout_seconds = 3000

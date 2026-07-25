@@ -1,0 +1,131 @@
+{
+  "schema_version": 2,
+  "duration_seconds": 136.07290295895655,
+  "duration_scope": "Six science artifacts with Qiskit semantic checks plus the 1000-case adder pilot; the recorded full adder verification ran separately.",
+  "hyra_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+  "simpletes_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+  "sunspot_data_sha256": "afb272b758d8db30446e43930091a98dbcf09210086da7fac8d5337f5532f68c",
+  "environment": {
+    "python": "3.11.4",
+    "science": {
+      "numpy": "1.26.0",
+      "scipy": "1.10.1",
+      "psutil": "5.9.0",
+      "torch": "2.0.1"
+    },
+    "qubit": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "qiskit": "1.2.0",
+      "qiskit_qasm3_import": "0.6.0"
+    }
+  },
+  "checks": {
+    "autocorrelation_first": {
+      "qualified": true,
+      "c1": 1.502850302071008,
+      "target": 1.50285,
+      "matches_published": true
+    },
+    "autocorrelation_second": {
+      "qualified": true,
+      "r": 0.9629011010961755,
+      "target": 0.962901,
+      "matches_published": true,
+      "scale_normalization": 1397893.084,
+      "note": "The published array exceeds the upstream evaluator's 1000 cap. A global scale normalization is required; the objective is scale invariant."
+    },
+    "erdos_min_overlap": {
+      "qualified": true,
+      "c5": 0.38085942236531434,
+      "target": 0.380859,
+      "matches_published": true
+    },
+    "sums_diffs": {
+      "qualified": true,
+      "c_a": 1.1597147989125474,
+      "set_size": 181131,
+      "sumset_size": 1439434,
+      "diffset_size": 1081975,
+      "target": 1.15971,
+      "matches_published": true
+    },
+    "qubit_routing": {
+      "qualified": true,
+      "cnot_added_from_explicit_swaps": 258366,
+      "omitted_baseline_cnot": 3,
+      "reproduced_total_cnot_added": 258369,
+      "by_topology": {
+        "q20": 37866,
+        "willow": 95898,
+        "heron_fez": 124602
+      },
+      "target": 258369,
+      "matches_published": true,
+      "difference_from_published": 0,
+      "omitted_case_ids": [
+        "4gt13_92_q20",
+        "4mod5-v1_22_q20",
+        "alu-v0_27_q20",
+        "decod24-v2_43_q20",
+        "ising_model_10_q20",
+        "ising_model_10_willow",
+        "ising_model_10_heron_fez",
+        "ising_model_13_q20",
+        "ising_model_16_q20",
+        "ising_model_16_heron_fez",
+        "mod5mils_65_q20"
+      ],
+      "adjacency_violations": [],
+      "semantic_equivalence": "passed",
+      "semantic_errors": [],
+      "note": "The artifact contains 61 changed routed circuits. The frozen suite has 72 cases; its 11 omitted baseline-pass-through cases contribute three CNOTs, explaining 258366 + 3 = the published 258369."
+    },
+    "sunspot_symbolic": {
+      "qualified": true,
+      "rolling_origin_r2": 0.7796665159643883,
+      "penalty": 0.025,
+      "penalized_score": 0.7546665159643883,
+      "era": [
+        1979.042,
+        2025.958
+      ],
+      "target": 0.78,
+      "matches_published": true,
+      "contaminated_holdout": true
+    },
+    "smallest_adder": {
+      "qualified": true,
+      "trainable_parameters": 15,
+      "declared_parameters": 15,
+      "target": 15,
+      "matches_published": true,
+      "public_seed": 2025,
+      "public_accuracy": 99.95004995004994,
+      "public_passed": 10005,
+      "public_total": 10010,
+      "shadow_results": [
+        {
+          "seed": 100003,
+          "accuracy": 99.95004995004994,
+          "qualified": true,
+          "passed": 10005,
+          "total": 10010
+        },
+        {
+          "seed": 100019,
+          "accuracy": 99.95004995004994,
+          "qualified": true,
+          "passed": 10005,
+          "total": 10010
+        }
+      ],
+      "direct_input_addition_detected": false,
+      "nonstandard_fixed_buffers": [],
+      "trained_category_review": "manual_final_review_required",
+      "verification_level": "10000_random_plus_10_edges_per_seed"
+    }
+  },
+  "all_qualified": true,
+  "all_match_published": true
+}

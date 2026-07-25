@@ -1,0 +1,98 @@
+{
+  "experiment": "adderboard-codex-hyra-like-smoke",
+  "status": "qualified_with_manual_audit_notes",
+  "isolation": "advisory",
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "codex_cli_version": "0.145.0-alpha.18",
+    "context_calls": 1,
+    "proposal_calls": 1,
+    "context_usage": {
+      "input_tokens": 19576,
+      "output_tokens": 493,
+      "reasoning_output_tokens": 164
+    },
+    "proposal_usage": {
+      "input_tokens": 1452572,
+      "cached_input_tokens": 1347584,
+      "output_tokens": 14207,
+      "reasoning_output_tokens": 5594
+    },
+    "proposal_duration_seconds": 394.7982506660046
+  },
+  "pinned_inputs": {
+    "adderboard_commit": "07061de8d833d04e9800a009721731586e102aef",
+    "m10s_commit": "a05e46ed449e064081ea9f40a3a132b798ac965d",
+    "config_sha256": "84f6a7a7c83b39ebfcb0d38f52da0320498f965b5e1358a5946ff15be3446f7f",
+    "task_sha256": "d68119676e99c13d3e5dbb4c9be7d1ceaf2d2dfbb198a83fc5e155e2b2a2038f",
+    "seed_full_verification_sha256": "dd0a38689247c261bb745920a68c07fafe7f21adebbdcbacef5e57909e0b13c1"
+  },
+  "baseline": {
+    "actual_parameters": 36,
+    "declared_parameters": 36,
+    "full_verification_correct": 30030,
+    "full_verification_total": 30030
+  },
+  "candidate": {
+    "attempt_id": "attempt-0001",
+    "actual_parameters": 35,
+    "declared_parameters": 35,
+    "workspace_tree_sha256": "118e7f4e5e6a56c8d2a6351fa4700ff8b363a7f6be84063b0a2fd85212881cf0",
+    "submission_sha256": "e648a3b71b9b7a3240b2c0ba422b3dfcb8a2a1793be13b260912e9da63175057",
+    "checkpoint_sha256": "3db821b85fa92d683b749ca2e4d3ac2ca8abe09ef9743eed0aa9eb8ce13802f6",
+    "conversion_script_sha256": "1b27c6bf0e9e291f915de948de6039ac3e0d43c1f35013de26497086c27623b5",
+    "mechanism": "remove the global circular-embedding amplitude and absorb its scale into homogeneous tied attention and MLP weights",
+    "source_amplitude": 161.87979125976562,
+    "fixed_amplitude": 1.0,
+    "checkpoint_parameter_tensors": 9,
+    "checkpoint_non_parameter_learned_tensors": 0
+  },
+  "full_verification": {
+    "qualified": true,
+    "direct_input_addition_detected": false,
+    "metadata_matches_actual": true,
+    "official": {
+      "seed": 2025,
+      "passed": 10010,
+      "total": 10010,
+      "accuracy": 100.0
+    },
+    "shadow": [
+      {
+        "seed": 100003,
+        "passed": 10010,
+        "total": 10010,
+        "accuracy": 100.0
+      },
+      {
+        "seed": 100019,
+        "passed": 10010,
+        "total": 10010,
+        "accuracy": 100.0
+      }
+    ],
+    "aggregate_passed": 30030,
+    "aggregate_total": 30030
+  },
+  "equivalence_audit": {
+    "random_autoregressive_prefix_logits_compared": 21312,
+    "argmax_mismatches": 0,
+    "maximum_absolute_logit_delta_after_source_scale_normalization": 0.002216339111328125
+  },
+  "reproducible_artifact": {
+    "path": "solutions/adderboard_gauge_35p",
+    "submission_sha256": "2034e8ff85c158e1ac85130e67a87846e46c072b900778611578ee3312727513",
+    "conversion_sha256": "db918d5a02418295739e27dda037c579320fc430e4ea60665cc8acd900829f97",
+    "materializer_sha256": "74189041e5772843ea1e476a3e768ca4b31372fb5a64d31beedef926440d32ac",
+    "materialized_state_max_delta_from_raw_proposal": 0.0,
+    "pilot_reverification": "1530/1530"
+  },
+  "manual_audit_notes": [
+    "This is a Hyra-like public-spec run, not Tencent's private Hyra harness.",
+    "Codex isolation is advisory because the local client can read some global Codex state and must contact the model service.",
+    "The raw generated submission retains the upstream author's metadata; any public submission must add explicit derived-work attribution.",
+    "The automatic source audit is intentionally incomplete; an official leaderboard claim still requires upstream rule-owner review."
+  ]
+}

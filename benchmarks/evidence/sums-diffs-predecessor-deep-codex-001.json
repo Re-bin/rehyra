@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "sums_diffs",
+  "contract": {
+    "source": "SimpleTES",
+    "source_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+    "metric": "public-compatible finite-set sum-versus-difference exponent",
+    "objective": "maximize C(A)",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "campaigns": [
+      "sums-predecessor-source-frozen-001",
+      "sums-predecessor-deep-001"
+    ],
+    "context_calls": 10,
+    "proposal_calls": 12,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 7421.456964,
+    "qualified_proposals": 11,
+    "failed_proposals": 1
+  },
+  "seed": {
+    "source": "best_results/combinatorial_construction/sum_difference_problem/sum_difference_problem_best.py",
+    "source_sha256": "a243e0b9109979f5f38620d8bae950d623a218c97d389fcb09c400d89fc58da7",
+    "construction_sha256": "d5cbe4aff970312ecf17f049bbee7fbcfe5ee2ca4b87d44790855d862b4051a5",
+    "c_a": 1.1448868597133133,
+    "set_size": 506,
+    "qualified": true
+  },
+  "best": {
+    "run": "sums-predecessor-source-frozen-001",
+    "attempt_id": "attempt-0004",
+    "c_a": 1.1452825560204902,
+    "set_size": 512,
+    "sumset_size": 3603,
+    "diffset_size": 2813,
+    "qualified": true,
+    "absolute_improvement": 0.0003956963071769515,
+    "relative_improvement_percent": 0.03456204460902244
+  },
+  "public_hyra_artifact": {
+    "c_a": 1.159714799,
+    "absolute_gap": 0.014432242979509846,
+    "candidate_below_target_percent": 1.2444648453183915,
+    "matched_or_exceeded": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 1720442,
+      "cached_input_tokens": 1360640,
+      "output_tokens": 37954,
+      "reasoning_output_tokens": 22352
+    },
+    "proposal": {
+      "input_tokens": 15823227,
+      "cached_input_tokens": 14862592,
+      "output_tokens": 254969,
+      "reasoning_output_tokens": 102447
+    }
+  },
+  "integrity": {
+    "source": {
+      "config_sha256": "48a839fe8aed70b41481548588288df2e40388b916b316c9e9f84a3467b8a68a",
+      "task_sha256": "610cfdcfa34706a81a52dc39229b587896b2d8d9118bd8101cdc3cc3774b2eff",
+      "preregistration_sha256": "98190dbfe1b41f0d8a5be1200805e10147acc8e3dc453e2403104460b3297c95",
+      "report_sha256": "dfdba08de94a5444ce8b7fa4217ec89f25df98af620da323f6cfca4143b3cba3",
+      "events_sha256": "dbffafd5eeddf3b22d7abb2f42a51e547ab8d01a52ebbd2d7d0fa7a18bf2088d"
+    },
+    "deep": {
+      "config_sha256": "f58d4dff375677908ce9597d7b29539735b01a3bbfb5ac8b7601af7b93bf9730",
+      "task_sha256": "610cfdcfa34706a81a52dc39229b587896b2d8d9118bd8101cdc3cc3774b2eff",
+      "preregistration_sha256": "0d9fe04cc841f2c463edb3570f058bf31652281db09ab414ab13fa717892e339",
+      "report_sha256": "42888e73747d916dd285995af6c2d4beb5a6b5e7effdfc56513c1bc6c98ae2d6",
+      "events_sha256": "8b4de49c141c45abb7cdcf6f074e14cc5da2bf9e96bd547a61f46e4f6256985b",
+      "source_attempt_sha256": "a108762231c2ce3abd1fba796b0e383944f70cbd51b07cc11ed29f3c9af0b177",
+      "imported_workspace_tree_sha256": "0ba2d5ddb9a7d78cf5b647bcc80cc233f2372faabbf99da5176619c16ae1c817",
+      "offline_validation": "passed",
+      "agent_evidence_audit": "passed"
+    }
+  },
+  "verdict": "The public-spec loop autonomously improved the pinned predecessor during the first campaign and preserved it throughout the deep continuation. It did not reproduce Hyra's published C(A)."
+}

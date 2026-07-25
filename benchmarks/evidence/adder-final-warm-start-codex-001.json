@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "evidence_level": "final_artifact_warm_start",
+  "task": "smallest_adder",
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "adder-hyra-final-smoke-001",
+    "harness_git_commit": "8751958d250114d49929e8138928bea2c0eefdd7",
+    "harness_tree_sha256": "a996fafd8beb91ce1363e83318d335c0de4806f29ba8675613a7bb95ce2f5435",
+    "maximum_proposals": 1,
+    "maximum_concurrency": 1,
+    "context_calls": 1,
+    "proposal_title": "Sensitivity-guided 14-parameter merge with 15-parameter fallback",
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "Tencent Hyra public final artifact",
+    "submission_sha256": "25165a7b6e8040558adfa0f6dd458829a24e3d04a356b19a007650ce5334f705",
+    "actual_parameters": 15,
+    "qualified": true
+  },
+  "candidate": {
+    "attempt_id": "attempt-0001",
+    "submission_sha256": "25165a7b6e8040558adfa0f6dd458829a24e3d04a356b19a007650ce5334f705",
+    "actual_parameters": 15,
+    "qualified": true,
+    "fallback_byte_identical_to_seed": true,
+    "development_result": "The attempted 14-parameter merges failed the 99% qualification margin, so the Proposal restored its byte-identical 15-parameter fallback before submission."
+  },
+  "verification": {
+    "public": {
+      "tests": 1010,
+      "passed": 1009,
+      "accuracy": 99.9009900990099,
+      "seed": 2025
+    },
+    "shadow": [
+      {
+        "tests": 1010,
+        "passed": 1010,
+        "accuracy": 100.0,
+        "seed": 100003
+      },
+      {
+        "tests": 1010,
+        "passed": 1010,
+        "accuracy": 100.0,
+        "seed": 100019
+      }
+    ],
+    "actual_matches_declared_parameters": true,
+    "direct_input_addition_detected": false,
+    "nonstandard_fixed_buffers": [],
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 7
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 2,
+      "audited_transcript_count": 2,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    }
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 105142,
+      "cached_input_tokens": 75776,
+      "output_tokens": 1806,
+      "reasoning_output_tokens": 717
+    },
+    "proposal": {
+      "input_tokens": 1687524,
+      "cached_input_tokens": 1603328,
+      "output_tokens": 20776,
+      "reasoning_output_tokens": 6816
+    }
+  },
+  "integrity": {
+    "config_sha256": "9ce809ab82629bfd02fa0cfd085dff17e18f33379844d6be98a0b1a79b104a3c",
+    "task_sha256": "cfd6137744ec9d74d8ca6e4f5f7e37d1eecf4cbf8041597161516c9c11a93e87",
+    "preregistration_sha256": "96623e4ccf3ac247d1764029881b828deeaa5a4c119ec49d59eef3a6bb4b9ade",
+    "report_sha256": "f0b4c423e6fd5310b8a1e70bed620a63c6dbe3d09b14d556c9c88da250804f01",
+    "events_sha256": "94e2b4c1c17cbf3e8891e2ebd429864d984e32d4bf9d783929ab0646fa5c50d3"
+  },
+  "verdict": "The one-Proposal continuation explored a concrete 14-parameter compression but correctly refused to submit it below the accuracy threshold. The final candidate was byte-identical to the qualified 15-parameter public artifact, demonstrating explicit non-regression rather than a new parameter-count result."
+}

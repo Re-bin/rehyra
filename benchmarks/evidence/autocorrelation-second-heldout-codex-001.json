@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "autocorrelation_second",
+  "contract": {
+    "objective": "maximize R",
+    "metric": "public-compatible normalized second autocorrelation",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "ac2-heldout-state-fixed-001",
+    "harness_git_commit": "71ef86b7e9c58e30f271a9b7f58a55a5dd9d7415",
+    "harness_tree_sha256": "d697cb7ad7fcb8becf473bd44b3aa04fec0ebbe48131c4a53265852c3a5e18db",
+    "maximum_proposals": 4,
+    "maximum_concurrency": 1,
+    "context_calls": 4,
+    "qualified_proposals": 4,
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "TTT-Discover published predecessor",
+    "captured_state_sha256": "8e506125d2c70cdd0672a6390ca09bc5a5018efc056141fee36322cbeedec959",
+    "sequence_length": 262144,
+    "r": 0.9626937749955139,
+    "qualified": true
+  },
+  "proposals": [
+    {
+      "attempt_id": "attempt-0001",
+      "r": 0.9626937749955137,
+      "qualified": true
+    },
+    {
+      "attempt_id": "attempt-0002",
+      "r": 0.9626937749955139,
+      "qualified": true
+    },
+    {
+      "attempt_id": "attempt-0003",
+      "r": 0.9626937749955137,
+      "qualified": true
+    },
+    {
+      "attempt_id": "attempt-0004",
+      "r": 0.9626937749955137,
+      "qualified": true
+    }
+  ],
+  "best": {
+    "attempt_id": "attempt-0000",
+    "r": 0.9626937749955139,
+    "absolute_improvement_over_seed": 0.0,
+    "qualified": true
+  },
+  "public_hyra_artifact": {
+    "repository_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+    "r": 0.9629011010961755,
+    "absolute_gap": -0.00020732610066165336,
+    "relative_gap_percent": -0.02153140044086668,
+    "matched_or_exceeded": false
+  },
+  "verification": {
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 38
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 8,
+      "audited_transcript_count": 8,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    }
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 861261,
+      "cached_input_tokens": 711424,
+      "output_tokens": 31325,
+      "reasoning_output_tokens": 18418
+    },
+    "proposal": {
+      "input_tokens": 3993396,
+      "cached_input_tokens": 3654400,
+      "output_tokens": 71212,
+      "reasoning_output_tokens": 26224
+    }
+  },
+  "integrity": {
+    "config_sha256": "07eefc838f6cc513487e37455a88a901b625296bd5e7c2c79b2d814dc34498a4",
+    "task_sha256": "db806f7015ee835a2589fc80cdefed22a06d52e6bc27ddb48fbb9df7b4302ac9",
+    "preregistration_sha256": "1ec2bd82317c9cf7f4b8a3ee16a7ec90ebd52353a4a14dcd5662e16ec85f197b",
+    "run_sha256": "3bfc17c7a1081b07d362c820a60d626e5a673697cde9facb89a9de333aa7a6ff",
+    "report_sha256": "8a1f87b307398749a98e83548956ff80cbcee4312e950f5df69b09be780c543d",
+    "events_sha256": "e782f3a077ccde045bc66479cd6dd7fad548cd1f55e8e543848bfa7011d659a0"
+  },
+  "verdict": "All four independently generated proposals qualified, but none exceeded the pinned predecessor beyond floating-point noise. The selector correctly retained the seed. This state-fixed run does not match the public Hyra artifact."
+}

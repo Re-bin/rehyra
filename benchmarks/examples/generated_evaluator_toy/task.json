@@ -1,0 +1,21 @@
+{
+  "name": "generated-evaluator-toy",
+  "goal": "Produce candidate.json containing one integer x in [-1000, 1000]. Maximize score = -(x - 137)^2. Qualification requires exactly one key named x and an integer value in range. The evaluator must compute the score itself.",
+  "seed_workspace": "seed",
+  "submission_relpath": "candidate.json",
+  "entrypoint_argv": [
+    "/bin/sh",
+    "{workspace}/solve.sh",
+    "{submission}"
+  ],
+  "evaluator_argv": [],
+  "evaluator_mode": "generated",
+  "evaluator_relpath": "evaluator.py",
+  "objective_key": "score",
+  "direction": "maximize",
+  "qualification_key": "qualified",
+  "provenance": {
+    "kind": "model-independent integration fixture",
+    "network_required": false
+  }
+}

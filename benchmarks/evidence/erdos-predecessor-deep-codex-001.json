@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "erdos_min_overlap",
+  "contract": {
+    "source": "SimpleTES",
+    "source_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+    "metric": "upstream Erdos minimum-overlap C5",
+    "objective": "minimize C5",
+    "construction_points": 2400,
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "campaigns": [
+      "erdos-predecessor-source-frozen-001",
+      "erdos-predecessor-deep-001"
+    ],
+    "context_calls": 10,
+    "proposal_calls": 12,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 11524.323504,
+    "qualified_proposals": 12,
+    "failed_proposals": 0
+  },
+  "seed": {
+    "source": "best_results/mathematics_extremal_analysis/erdos_minimum_overlap/erdos_minimum_overlap_best.py",
+    "source_sha256": "951f1c9e3f09e16525b557b1de72ce44840dcf65a24cc9919fa683470be5dda1",
+    "construction_sha256": "5599983a94e0bfe96000c278a5fd470b9dde33f41282dcc90a3d9ca6c7bc1b4f",
+    "c5": 0.38086767582732667,
+    "qualified": true
+  },
+  "best": {
+    "run": "erdos-predecessor-deep-001",
+    "attempt_id": "attempt-0007",
+    "c5": 0.38086749217629323,
+    "qualified": true,
+    "absolute_improvement": 1.8365103343631617e-7,
+    "relative_improvement_percent": 4.8219117843851295e-5
+  },
+  "public_hyra_artifact": {
+    "c5": 0.380859422,
+    "absolute_gap": 8.070176293228926e-6,
+    "candidate_above_target_percent": 0.002118938334477892,
+    "matched_or_exceeded": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 1819053,
+      "cached_input_tokens": 1462528,
+      "output_tokens": 56421,
+      "reasoning_output_tokens": 31223
+    },
+    "proposal": {
+      "input_tokens": 10045564,
+      "cached_input_tokens": 9236736,
+      "output_tokens": 181337,
+      "reasoning_output_tokens": 70070
+    }
+  },
+  "integrity": {
+    "source": {
+      "config_sha256": "d106469fe808589f3b5e5878135bf7442d9a1fd260bbe31da30e28a5e3d43d24",
+      "task_sha256": "2968fd0600901667af1ee885d3a6031fb1fee22fa96b83f7fe0687b6114de995",
+      "preregistration_sha256": "ff7c8c2da23fccb1cb2d749bdb4de58674d652d2a13df5ff1a7f286f807b3160",
+      "report_sha256": "786f3c71c2fb211255645c0d4aa0cc6bcd36af3cdedc3374b2969bb4581218e2",
+      "events_sha256": "aed76583dea66a53661c2e9561018bbe490ea394b6d66a44a1f5e1a910ee9dd6"
+    },
+    "deep": {
+      "config_sha256": "7c785ae86c7525392de67ba3253f58d5f3735ed487a31b99a6c5c70b0c2f8184",
+      "task_sha256": "2968fd0600901667af1ee885d3a6031fb1fee22fa96b83f7fe0687b6114de995",
+      "preregistration_sha256": "613b00cd25c29609390482ea8e2f9d49a4a2ed91126be410d47992107b605c99",
+      "report_sha256": "60a408a54f09b43aaf313c571ca7b9224d554c0f96413b4c111c3a8b3166fbbf",
+      "events_sha256": "5d8bc39db38e50f2b59e5506ef1bc434773c673973385992914decbc840eadac",
+      "source_attempt_sha256": "be28df8f956a50235c7ad97afe53ae788e6ebfd70711dcd850767d538eca6a62",
+      "imported_workspace_tree_sha256": "9149983da674af0faedc15e0081a42bffb0a7205a59a1cfd53e74f363c1eaac7",
+      "offline_validation": "passed",
+      "agent_evidence_audit": "passed"
+    }
+  },
+  "verdict": "The public-spec loop autonomously improved the pinned predecessor. Context used the successful all-shift entropy proposal as evidence for later continuations, but the twelve-proposal campaign did not reproduce Hyra's published C5."
+}

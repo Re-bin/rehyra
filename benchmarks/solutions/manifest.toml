@@ -1,0 +1,135 @@
+schema_version = 1
+suite = "hyra-low-cost-public"
+publication_audit = "evidence/solution-publication-verification.json"
+
+[policy]
+published = "ReHyra-produced qualified primary result with frozen evidence and reproducible bytes"
+no_new_solution = "No proposal displaced the frozen seed; evidence is retained without inventing a solution"
+
+[[results]]
+task = "smallest_adder"
+status = "published"
+bundle = "adderboard_gauge_35p"
+origin = "Attribution-clean reconstruction of the frozen candidate"
+attempt_id = "attempt-0001"
+frozen_workspace_sha256 = "118e7f4e5e6a56c8d2a6351fa4700ff8b363a7f6be84063b0a2fd85212881cf0"
+direction = "minimize"
+objective_key = "parameters"
+objective_value = 35
+evidence = "evidence/codex-smoke-35p-full-verification.json"
+evidence_sha256 = "3a7993963746daaba363972498bb9ef67ceff7882c8ffd512b57f9bc3ad712e0"
+upstream_license = "MIT"
+verification = "30,030/30,030 examples plus equivalence and source audits"
+files = [
+  { path = "submission.py", role = "source", sha256 = "2034e8ff85c158e1ac85130e67a87846e46c072b900778611578ee3312727513" },
+  { path = "convert.py", role = "materializer", sha256 = "db918d5a02418295739e27dda037c579320fc430e4ea60665cc8acd900829f97" },
+  { path = "materialize.py", role = "materializer", sha256 = "74189041e5772843ea1e476a3e768ca4b31372fb5a64d31beedef926440d32ac" },
+]
+
+[[results]]
+task = "sums_diffs"
+status = "published"
+bundle = "sums_diffs_1_160093274"
+origin = "Exact frozen candidate and captured construction"
+attempt_id = "attempt-0004"
+frozen_attempt_sha256 = "6107ad106e364ada9200ec276e9f90959f617e90756124007e52b0793e6c7e27"
+frozen_workspace_sha256 = "0bedff569b199fe58bf3c8d3967d17fec49e122357dcebb64f4af3a43585446a"
+direction = "maximize"
+objective_key = "c_a"
+objective_value = 1.1600932741088714
+evidence = "evidence/sums-diffs-public-contract-codex-001.json"
+evidence_sha256 = "6989f25234ff75f2274cc94551bb7a4eb33927883c4474abf023998f06d595f8"
+upstream_license = "AGPL-3.0-or-later"
+verification = "Frozen FFT evaluator and independent exact integer NTT agree"
+files = [
+  { path = "solution.py", role = "source", sha256 = "522ecfa40565a505d19f4c40d51fd7700d59e33ef8b852c5871743b2bf1d66f9" },
+  { path = "construction.json", role = "construction", sha256 = "ee4716861bb851525e9a4238ca5555422b3ebc159303ae78ad020f2d34c8f65f" },
+]
+
+[[results]]
+task = "autocorrelation_first"
+status = "published"
+bundle = "autocorrelation_first_1_502862824"
+origin = "Exact frozen candidate and captured construction"
+attempt_id = "attempt-0004"
+frozen_attempt_sha256 = "e7bec96eafc8cb0ba216d9d00831c4a04c7109f6f226753d58c101b0f286588e"
+frozen_workspace_sha256 = "aebc91a699c5f514a9dab22ae00e62118a398456d36055a158c276f20996ddb9"
+direction = "minimize"
+objective_key = "c1"
+objective_value = 1.5028628243951712
+evidence = "evidence/autocorrelation-first-heldout-codex-001.json"
+evidence_sha256 = "e1a2933eb5fa0526911c28508364fad19c675d90124ff632b5f68bd83d4554d9"
+upstream_license = "AGPL-3.0-or-later; predecessor data MIT"
+verification = "Frozen evaluator and independent NumPy FFT agree"
+files = [
+  { path = "solution.py", role = "source", sha256 = "bcb2c02f259c22cab1104368e0cd3f353737862672c35ef588700871d06d88f9" },
+  { path = "construction.json", role = "construction", sha256 = "194b72b1b8076ad1b005eb2d5e03c91601d5ef4bf60c87a90c56e218c5279a94" },
+]
+
+[[results]]
+task = "autocorrelation_second"
+status = "no_new_solution"
+direction = "maximize"
+objective_key = "r"
+objective_value = 0.9626937749955139
+evidence = "evidence/autocorrelation-second-heldout-codex-001.json"
+evidence_sha256 = "15854374591bbe90a833b953c44550271103f7016214e5a7d55c6a8e533a9f5b"
+reason = "All four proposals qualified, but none exceeded the pinned predecessor beyond floating-point noise."
+
+[[results]]
+task = "erdos_min_overlap"
+status = "published"
+bundle = "erdos_min_overlap_0_380867498"
+origin = "Exact frozen candidate and captured construction"
+attempt_id = "attempt-0002"
+frozen_attempt_sha256 = "efde5a4d964336e83945098732f454303a9ec4f9247c3812c50684a1aba04516"
+frozen_workspace_sha256 = "9da0a70fe21f3a0cd431a8fbee049b2499b89c206172d4ac882761744daa7da9"
+direction = "minimize"
+objective_key = "c5"
+objective_value = 0.3808674981608905
+evidence = "evidence/erdos-heldout-codex-001.json"
+evidence_sha256 = "c06e4fcf2287069dac927bfe025f5a13bf50cfe24fd35af8a4748459f316c88b"
+upstream_license = "AGPL-3.0-or-later"
+verification = "Frozen evaluator and independent NumPy correlate agree"
+files = [
+  { path = "solution.py", role = "source", sha256 = "4a78e4d054e84ce7cb79ce1c4b1ec4c3d7d80d43ee6eee0ea3dcf94e9331a829" },
+  { path = "construction.json", role = "construction", sha256 = "b2ea51f350ee36fd4f4cfe7b3f05f59b41138606f819eb3d865346c7293c4f69" },
+]
+
+[[results]]
+task = "qubit_routing"
+status = "published"
+bundle = "qubit_routing_298353"
+origin = "Exact frozen candidate"
+attempt_id = "attempt-0004"
+frozen_attempt_sha256 = "4b58f6c6e4698dd1e97c9ef069993423f07cbe021d239f6ae0ab35cb8776c9ae"
+frozen_workspace_sha256 = "aeb1e7f5379441c5a62723e3cd753237b0f447d7f90ded75deab966f2e2b7681"
+direction = "minimize"
+objective_key = "cnot_added"
+objective_value = 298353
+evidence = "evidence/qubit-routing-cold-codex-001.json"
+evidence_sha256 = "d3c4fbf2ffe1f0941beb912f7037d2969dbe06cb421ffacf837a4e0bc0b77417"
+upstream_license = "AGPL-3.0-or-later"
+verification = "All 72 circuits passed topology and semantic-equivalence checks"
+files = [
+  { path = "solution.rs", role = "source", sha256 = "51606b6dfa097dc3fa82f73bde98942945f23877bffb0b388efe68723a441752" },
+]
+
+[[results]]
+task = "sunspot_symbolic"
+status = "published"
+bundle = "sunspot_symbolic_0_696763545"
+origin = "Exact frozen candidate"
+attempt_id = "attempt-0004"
+frozen_attempt_sha256 = "99300f753cb466aecde9fa0750bc9a8fa50ea49a27edf72c2d1d567b99eeae8d"
+frozen_workspace_sha256 = "0181aa5ff8cd7c8432aa96c20686f2d63b6522464afc3b05a499ac2c0e082c27"
+direction = "maximize"
+objective_key = "penalized_confirmation_score"
+objective_value = 0.6767635448250007
+evidence = "evidence/sunspot-causal-cold-codex-003.json"
+evidence_sha256 = "4788ff510977f4a73382c188fde5556b179e7426776336f4ce6fcbbd01382d67"
+upstream_license = "Generated formula; evaluator and public data provenance are pinned in evidence"
+verification = "Filesystem-sealed 1979-2025 confirmation; raw R2 0.6967635448250007"
+files = [
+  { path = "solution.json", role = "construction", sha256 = "06f700ddbb80c955ee9535e22c88832085137cb03ab9f6dc33faa470f865b9b4" },
+]

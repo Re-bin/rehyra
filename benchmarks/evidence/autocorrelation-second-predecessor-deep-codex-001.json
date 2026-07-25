@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "autocorrelation_second",
+  "contract": {
+    "source": "SimpleTES",
+    "source_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+    "metric": "public-compatible scale-invariant FFT autocorrelation ratio",
+    "objective": "maximize R",
+    "sequence_length": 262144,
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "campaigns": [
+      "ac2-predecessor-source-frozen-001",
+      "ac2-predecessor-deep-001"
+    ],
+    "context_calls": 8,
+    "proposal_calls": 10,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 6466.124252,
+    "qualified_proposals": 10,
+    "failed_proposals": 0
+  },
+  "seed": {
+    "source": "best_results/mathematics_extremal_analysis/second_autocorrelation_inequality/second_autocorrelation_inequality_best.py",
+    "source_sha256": "2e9acbdf8c3cea1bb475bed6b0d11840bd78400f42af13201922b8cccb2bc521",
+    "construction_sha256": "cd9d2fb1ba5280f46dbe8a836d1dc65c2b0c9e6a2c0cd9f857c47cee7d555ccd",
+    "r": 0.9626937749955139,
+    "qualified": true
+  },
+  "best": {
+    "run": "ac2-predecessor-deep-001",
+    "attempt_id": "attempt-0006",
+    "r": 0.9626937755511653,
+    "qualified": true,
+    "absolute_improvement": 5.556514137694535e-10,
+    "relative_improvement_percent": 5.7718396877765495e-08
+  },
+  "public_hyra_artifact": {
+    "r": 0.962901101,
+    "absolute_gap": 0.0002073254488347276,
+    "matched_or_exceeded": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 1103668,
+      "cached_input_tokens": 833280,
+      "output_tokens": 38536,
+      "reasoning_output_tokens": 27175
+    },
+    "proposal": {
+      "input_tokens": 13000466,
+      "cached_input_tokens": 12277504,
+      "output_tokens": 197927,
+      "reasoning_output_tokens": 73622
+    }
+  },
+  "integrity": {
+    "source": {
+      "config_sha256": "ccca32d6da8ff552989376630b321d6c74b384c135b8a30df0240070809d68c9",
+      "task_sha256": "db806f7015ee835a2589fc80cdefed22a06d52e6bc27ddb48fbb9df7b4302ac9",
+      "preregistration_sha256": "3d1ab2589cb67fbb18a94918116fd739c8f4c4742ca655519161acc56aa17e9e",
+      "report_sha256": "c6f866a23ac362998704e43af2a25b1dd197ca8ee234c55270893353d6e90772",
+      "events_sha256": "d69e5f14f974037ca3b6e5c5e822e0fb582fb3f1f669f52efa983dad137f52ae"
+    },
+    "deep": {
+      "config_sha256": "f4fe98ce94635157821542b757f7521f4fdb2900f617c5bea1beed56c6958201",
+      "task_sha256": "db806f7015ee835a2589fc80cdefed22a06d52e6bc27ddb48fbb9df7b4302ac9",
+      "preregistration_sha256": "cdd9cbacfecf405c15c43a840a5ed0c2f02dccdbb7fb13ac569ca58cd300c04b",
+      "report_sha256": "0151c3209a8208fa49d21be02b131d061134af2afededcb00a2d1fbd3d95cccb",
+      "events_sha256": "bc0769840ab500ffebe7319bce1a1f29d10639986abe85aa356a45565ccf8aca",
+      "source_attempt_sha256": "94f33a91be2cf49a2305e29c74eb7b07387af2b9d17c898d37bb1a6fcb698798",
+      "imported_workspace_tree_sha256": "049dca926243b0778722204eab8f250073c8f88a73581ccd376644bc4db0ef73",
+      "offline_validation": "passed",
+      "agent_evidence_audit": "passed"
+    }
+  },
+  "verdict": "The public-spec search loop made a numerically valid but negligible improvement over the pinned predecessor. It did not reproduce Hyra's published improvement under this ten-proposal budget."
+}

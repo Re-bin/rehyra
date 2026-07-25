@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-24T11:28:05Z",
+  "scope": "Publication audit for solutions/manifest.toml",
+  "manifest_sha256": "337bff72342caa87848dc12f582d9c2ac02d1c7aec1cf54e3f634f6e51de0055",
+  "checks": [
+    {
+      "task": "smallest_adder",
+      "passed": true,
+      "method": "Materialized the published bundle into a fresh bootstrapped workspace and reran public plus two shadow samples.",
+      "result": {
+        "actual_parameters": 35,
+        "declared_parameters": 35,
+        "public": "110/110",
+        "shadow_seed_100003": "110/110",
+        "shadow_seed_100019": "110/110"
+      },
+      "full_evidence": "evidence/codex-smoke-35p-full-verification.json"
+    },
+    {
+      "task": "sums_diffs",
+      "passed": true,
+      "method": "Executed the published source from the pinned predecessor, compared the regenerated construction byte for byte, and independently recomputed support sizes.",
+      "result": {
+        "set_size": 502004,
+        "sumset_size": 3999449,
+        "diffset_size": 3003457,
+        "c_a": 1.1600932741088714,
+        "regenerated_construction_sha256": "ee4716861bb851525e9a4238ca5555422b3ebc159303ae78ad020f2d34c8f65f",
+        "exact_byte_match": true
+      }
+    },
+    {
+      "task": "autocorrelation_first",
+      "passed": true,
+      "method": "Loaded the frozen 30,000-element construction and independently recomputed linear autoconvolution with NumPy FFT.",
+      "result": {
+        "sequence_length": 30000,
+        "c1": 1.5028628243951705
+      }
+    },
+    {
+      "task": "autocorrelation_second",
+      "passed": true,
+      "method": "Checked that the manifest records no new solution and links the frozen run where no proposal displaced the seed.",
+      "result": {
+        "status": "no_new_solution",
+        "retained_seed_r": 0.9626937749955139
+      }
+    },
+    {
+      "task": "erdos_min_overlap",
+      "passed": true,
+      "method": "Decoded the frozen 2,400-element construction and independently recomputed the complete discrete correlation.",
+      "result": {
+        "sequence_length": 2400,
+        "c5": 0.3808674981608904
+      }
+    },
+    {
+      "task": "qubit_routing",
+      "passed": true,
+      "method": "Compiled the published Rust source with the frozen toolchain and reran the full 72-circuit, 20x20-trial evaluator.",
+      "result": {
+        "ok_cases": 72,
+        "failed_cases": 0,
+        "cnot_added": 298353,
+        "combined_score": 10710.599999999991,
+        "cargo": "1.97.1",
+        "rustc": "1.97.1"
+      }
+    },
+    {
+      "task": "sunspot_symbolic",
+      "passed": true,
+      "method": "Reran the fixed evaluator on the visible 1932-1978 era and the filesystem-sealed 1979-2025 confirmation era.",
+      "result": {
+        "search_score": 0.596527829566315,
+        "valid_r2": 0.6342577374018735,
+        "confirmation_r2": 0.6967635448250007,
+        "penalized_confirmation_score": 0.6767635448250007
+      }
+    }
+  ],
+  "all_passed": true
+}

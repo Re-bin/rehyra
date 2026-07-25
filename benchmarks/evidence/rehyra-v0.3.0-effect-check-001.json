@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "date": "2026-07-25",
+  "rehyra_version": "0.3.0",
+  "code_commit": "1a45e8cedc69eb5d37fb9483d17355d74eec8586",
+  "public_artifact_replay": {
+    "duration_seconds": 204.69510704197455,
+    "hyra_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+    "simpletes_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+    "sunspot_data_sha256": "afb272b758d8db30446e43930091a98dbcf09210086da7fac8d5337f5532f68c",
+    "checks": {
+      "autocorrelation_first": {
+        "value": 1.502850302071008,
+        "published": 1.50285,
+        "matches_published": true
+      },
+      "autocorrelation_second": {
+        "value": 0.9629011010961755,
+        "published": 0.962901,
+        "matches_published": true
+      },
+      "erdos_min_overlap": {
+        "value": 0.38085942236531434,
+        "published": 0.380859,
+        "matches_published": true
+      },
+      "sums_diffs": {
+        "value": 1.1597147989125474,
+        "published": 1.15971,
+        "matches_published": true
+      },
+      "qubit_routing": {
+        "value": 258369,
+        "published": 258369,
+        "semantic_equivalence": "passed",
+        "matches_published": true
+      },
+      "sunspot_symbolic": {
+        "value": 0.7796665159643883,
+        "published": 0.78,
+        "matches_published": true
+      },
+      "smallest_adder": {
+        "trainable_parameters": 15,
+        "published": 15,
+        "public_accuracy": 99.95004995004994,
+        "shadow_accuracies": [
+          99.95004995004994,
+          99.95004995004994
+        ],
+        "matches_published": true
+      }
+    },
+    "all_qualified": true,
+    "all_match_published": true
+  },
+  "live_agent_search": {
+    "task": "sunspot_symbolic_causal",
+    "protocol": "Hyra-final warm start; one Context call; one Proposal; confirmation evaluated once after the frozen search",
+    "agent": {
+      "backend": "codex",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high"
+    },
+    "budget": {
+      "context_calls": 1,
+      "proposals": 1,
+      "max_concurrency": 1
+    },
+    "visible_search_era": {
+      "range": [
+        1932.042,
+        1978.958
+      ],
+      "seed_r2": 0.7663691741271866,
+      "candidate_r2": 0.7641013709154837,
+      "selected_attempt": "attempt-0000"
+    },
+    "one_time_confirmation_era": {
+      "range": [
+        1979.042,
+        2025.958
+      ],
+      "seed_r2": 0.7796665159643883,
+      "candidate_r2": 0.7822781355222437,
+      "absolute_improvement": 0.0026116195578553825,
+      "relative_improvement_percent": 0.33496623291882077
+    },
+    "candidate_artifact_sha256": "dd3c04ce19104bb2f858754bcea322aefaea53958d0759b5c2e72292f0ab76c9",
+    "run_evidence_root_sha256": "019eb9d3f1cd3f8c386e72cedc85bda967acdeb116c62fbcbb8de04299d98525",
+    "offline_validation": {
+      "ok": true,
+      "checked_artifacts": 82,
+      "agent_transcripts": 2,
+      "forbidden_tool_events": 0
+    },
+    "usage": {
+      "context": {
+        "input_tokens": 420303,
+        "cached_input_tokens": 354048,
+        "output_tokens": 11195,
+        "reasoning_output_tokens": 4049
+      },
+      "proposal": {
+        "input_tokens": 110915,
+        "cached_input_tokens": 72448,
+        "output_tokens": 2254,
+        "reasoning_output_tokens": 466
+      }
+    },
+    "claim_level": "One-candidate filesystem-causal replication. The full historical series is public and may occur in model pretraining; this is not a clean model-generalization claim."
+  }
+}

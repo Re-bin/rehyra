@@ -1,0 +1,3 @@
+# Published solution bytes are content-addressed; do not normalize them.
+benchmarks/solutions/*/construction.json -diff -text linguist-generated=true
+benchmarks/solutions/*/solution.* -text whitespace=-blank-at-eol

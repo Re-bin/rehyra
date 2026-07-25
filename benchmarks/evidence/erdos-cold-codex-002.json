@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "evidence_level": "cold_start_discovery",
+  "run_name": "erdos-codex-public-spec",
+  "task": "erdos_min_overlap",
+  "contract": {
+    "source": "SimpleTES",
+    "objective": "minimize c5",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "search": {
+    "context_calls": 3,
+    "proposal_calls": 4,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 2790.789722
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "c5": 0.5042476829469856,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0003",
+    "c5": 0.38091184833950337,
+    "qualified": true
+  },
+  "relative_improvement_percent": 24.45937557643656,
+  "public_hyra_artifact": {
+    "c5": 0.38085942236531434,
+    "absolute_gap": 0.000052425974189029834,
+    "candidate_above_target_percent": 0.01376517715209463,
+    "matched_by_cold_search": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 699904,
+      "cached_input_tokens": 618240,
+      "output_tokens": 16446,
+      "reasoning_output_tokens": 8890
+    },
+    "proposal": {
+      "input_tokens": 3907682,
+      "cached_input_tokens": 3631104,
+      "output_tokens": 49129,
+      "reasoning_output_tokens": 14960
+    }
+  },
+  "integrity": {
+    "config_sha256": "d106469fe808589f3b5e5878135bf7442d9a1fd260bbe31da30e28a5e3d43d24",
+    "task_sha256": "4ca01945cdebd3ffd1a00be0e97b1f9cdcd840437863e25bb928c9a415b82838",
+    "preregistration_sha256": "76363f56f61b798fea332afa72099f8db0ddc702f095bea439283e7b51b5f415",
+    "report_sha256": "8b05913f6575648079797757b337d4dc1fae04ba993ba2ac225c80c8a1465325",
+    "events_sha256": "77caccd88c4b2f83d00af1cdee6f326ee8e1f18ce321eabc26467111f64b64ae",
+    "offline_validation": "passed"
+  },
+  "comparison_note": "The cold run autonomously improved the frozen seed by 24.46% and came within 0.0138% of the public Hyra artifact. It did not equal or exceed the artifact at full precision."
+}

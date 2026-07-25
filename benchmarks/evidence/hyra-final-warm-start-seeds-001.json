@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "evidence_level": "final_artifact_warm_start",
+  "hyra_results": {
+    "repository": "https://github.com/Tencent-Hunyuan/hyra-results.git",
+    "commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f"
+  },
+  "adapters": {
+    "science_commit": "9bc4c28",
+    "adder_commit": "9076034",
+    "sunspot_commit": "6d96f88"
+  },
+  "checks": {
+    "autocorrelation_first": {
+      "qualified": true,
+      "objective": "c1",
+      "value": 1.502850302071008,
+      "direction": "minimize",
+      "artifact_sha256": "d1c4a5075e7c15dcba75762363631cad4273f0e4d8bef472676d3ba12f643d8b",
+      "seed_source_sha256": "f9eb0bf48769d52fec3f1142c01ef176f45967c1a4c88ac1bdd411c69e84bd86",
+      "task_sha256": "8a1fa3ce17005e1a8aba93bd82ffa29b98fb12eb062080b125e5cf0ea5437bdf"
+    },
+    "autocorrelation_second": {
+      "qualified": true,
+      "objective": "r",
+      "value": 0.9629011010961755,
+      "direction": "maximize",
+      "artifact_sha256": "7e5fc9864969d100982fdd56b085c996e62b42e2cf2f632d9f22bb1cd8ce893a",
+      "seed_source_sha256": "3749f36fb75682ff8aa44432cce53e20b50ce38e481ba2626be05c0868cf0e48",
+      "task_sha256": "0bc0adb56a2a2e591766b88dd5f59a66c3b83ae1ced26203786f3be868597aef"
+    },
+    "erdos_min_overlap": {
+      "qualified": true,
+      "objective": "c5",
+      "value": 0.38085942236531434,
+      "direction": "minimize",
+      "artifact_sha256": "6d20eb1197ff458b7d0378edaef4837ee279773e074de18a12392ec73f20020a",
+      "seed_source_sha256": "973f8ec102592cf54b9417c9a6d3403e66e5d35428fb4b39fe0a3f59499ed2b6",
+      "task_sha256": "257fa69b4bc92784e70b7ebe8581f611c03217990198054f5825f2fcf3435a31"
+    },
+    "sums_diffs": {
+      "qualified": true,
+      "objective": "c_a",
+      "value": 1.1597147989125474,
+      "direction": "maximize",
+      "artifact_sha256": "81181d03f5ed08f6a71da02913d22de0d4d93746a84debd633ab52ac1bbb83c7",
+      "seed_source_sha256": "77489830f38d02589e972760c2d83402422bb2ca5018dc19512eb41b8e910d1a",
+      "task_sha256": "281836c5a4349489f98534d11753a71fd05e259ce004cdeec645c0cd4431dc36"
+    },
+    "smallest_adder": {
+      "qualified": true,
+      "objective": "actual_parameters",
+      "value": 15,
+      "direction": "minimize",
+      "public_accuracy": 99.9009900990099,
+      "shadow_min_accuracy": 100.0,
+      "artifact_sha256": "15c603312023e24562ff7e7cd3eda6e170a12c0b6b87bb8ea62d08543c8ebcbe",
+      "seed_source_sha256": "25165a7b6e8040558adfa0f6dd458829a24e3d04a356b19a007650ce5334f705",
+      "task_sha256": "d739d4909f1e181e20acb22832caee9f8584adeef3159cd25212095b2e778418",
+      "test_contract": "1000 random plus 10 edges on public seed and two shadow seeds"
+    },
+    "sunspot_symbolic": {
+      "qualified": true,
+      "search_feedback_score": 0.7059461924537581,
+      "search_feedback_r2": 0.7663691741271866,
+      "sealed_confirmation_r2": 0.7796665159643883,
+      "direction": "maximize",
+      "artifact_sha256": "9d113294f3420ab2a69e9e4e953304a9b5c05ffe89a8cb8525294ea1bf28ede1",
+      "seed_source_sha256": "9d113294f3420ab2a69e9e4e953304a9b5c05ffe89a8cb8525294ea1bf28ede1",
+      "task_sha256": "c5ac551bd41725c22cce17e1f16e55032547d0cc52782bddfe9fc51132e2b1cf",
+      "contamination_warning": "The causal filesystem split is not a model-pretraining holdout."
+    },
+    "qubit_routing": {
+      "qualified_public_artifact_replay": true,
+      "reproduced_total_cnot_added": 258369,
+      "executable_warm_start_available": false,
+      "reason": "Tencent published 61 per-case routed circuits, not a general executable routing policy. Converting the output artifact into policy code would change the evidence category."
+    }
+  },
+  "all_executable_warm_start_seeds_qualified": true,
+  "verdict": "Six public artifacts that are executable under their benchmark contract now have pinned, provider-neutral warm-start adapters and reproduce the public value before any Agent call. Qubit remains an exact artifact replay because its public result is output circuits rather than policy source. These checks establish non-regression starting points, not autonomous rediscovery."
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search_with_full_confirmation",
+  "run_name": "adderboard-codex-hyra-like-pilot",
+  "task": "adderboard-trained",
+  "contract": {
+    "predecessor": "public M10S trained 36-parameter artifact",
+    "objective": "minimize unique trainable parameters",
+    "qualification": "at least 99% accuracy on public and each shadow seed",
+    "isolation": "local_process_advisory",
+    "manual_final_review_required": true
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools_policy": "disabled"
+  },
+  "search": {
+    "context_calls": 3,
+    "proposal_calls": 4,
+    "maximum_concurrency": 2,
+    "wall_time_seconds": 3207.709262,
+    "improvement_lineage": [
+      36,
+      35,
+      34,
+      33
+    ],
+    "timed_out_proposals": [
+      "attempt-0003"
+    ]
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "actual_parameters": 36,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0004",
+    "actual_parameters": 33,
+    "declared_parameters": 33,
+    "direct_input_addition_detected": false,
+    "metadata_matches_actual": true,
+    "nonstandard_fixed_buffers": [],
+    "qualified": true
+  },
+  "full_confirmation": {
+    "public": {
+      "seed": 2025,
+      "passed": 9999,
+      "total": 10010,
+      "accuracy": 99.8901098901099,
+      "qualified": true
+    },
+    "shadow": [
+      {
+        "seed": 100003,
+        "passed": 10001,
+        "total": 10010,
+        "accuracy": 99.91008991008991,
+        "qualified": true
+      },
+      {
+        "seed": 100019,
+        "passed": 10001,
+        "total": 10010,
+        "accuracy": 99.91008991008991,
+        "qualified": true
+      }
+    ]
+  },
+  "public_hyra_artifact": {
+    "actual_parameters": 15,
+    "matched_or_exceeded": false,
+    "remaining_parameter_gap": 18
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 494719,
+      "cached_input_tokens": 383232,
+      "output_tokens": 13783,
+      "reasoning_output_tokens": 9098
+    },
+    "proposal": {
+      "input_tokens": 8263033,
+      "cached_input_tokens": 7890688,
+      "output_tokens": 50911,
+      "reasoning_output_tokens": 15815
+    }
+  },
+  "integrity": {
+    "config_sha256": "b4a00fc7f1f9a581af12a0a1dbc282e6bcf88cc2877fbeda864f026ccbd5eca1",
+    "task_sha256": "7c9e0c31db176ca775920a3deb244b0553b34c27c66c8cf1090dc474c9bdff1a",
+    "preregistration_sha256": "53e9d395347c9025aa7fc51664efbd76b9cb2d21f0c0db672885cc2ad6637689",
+    "report_sha256": "4e156a7178fe2fa61fcbb234368a28b4f3ae373fe89ee18df9e59c9f8a43b543",
+    "events_sha256": "37785ce9c075a2f16d6a243d7aea165672e37f80dd65bb0eef3f712facd3f481",
+    "offline_validation": "passed",
+    "agent_audit": "passed"
+  },
+  "comparison_note": "The public-spec loop autonomously reduced the frozen published predecessor from 36 to 33 unique trainable parameters and passed the full three-seed confirmation. It does not match Hyra's 15-parameter artifact, and trained-category legitimacy still requires final manual review."
+}

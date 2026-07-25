@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  If you use ReHyra's code, adapters, evaluation protocol, or experimental
+  evidence, please cite this software. If you use the Hyra research idea or
+  architecture, please cite Hyra as well.
+title: "ReHyra: An Open, Clean-Room Implementation of Hyra's Recursive Discovery Loop"
+type: software
+license: Apache-2.0
+authors:
+  - name: Re-bin Contributors
+version: 0.3.0
+date-released: 2026-07-25
+repository-code: "https://github.com/Re-bin/rehyra"
+url: "https://github.com/Re-bin/rehyra"
+keywords:
+  - research agents
+  - recursive discovery
+  - automated science
+  - agent evaluation
+  - reproducible benchmarks
+references:
+  - type: generic
+    title: "Hyra: A Simple Yet Effective Scaffold for General Discovery"
+    authors:
+      - name: Hyra Team
+    year: 2026
+    url: "https://hy.tencent.com/research/hyra"

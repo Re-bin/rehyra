@@ -1,0 +1,32 @@
+{
+  "name": "rehyra",
+  "version": "0.3.0",
+  "description": "Run auditable recursive optimization campaigns from Codex.",
+  "author": {
+    "name": "Re-bin Contributors",
+    "url": "https://github.com/Re-bin"
+  },
+  "homepage": "https://github.com/Re-bin/rehyra",
+  "repository": "https://github.com/Re-bin/rehyra",
+  "keywords": [
+    "agent",
+    "optimization",
+    "recursive-search",
+    "verification"
+  ],
+  "skills": "./codex-plugin/skills/",
+  "interface": {
+    "displayName": "ReHyra",
+    "shortDescription": "Verified recursive optimization from Codex",
+    "longDescription": "Turn a goal, workspace, evaluator, and budget into a fresh-workspace ReHyra campaign with immutable evidence and a reviewable winning patch.",
+    "developerName": "Re-bin Contributors",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Re-bin/rehyra",
+    "defaultPrompt": "Optimize this workspace with ReHyra and return a verified winning patch."
+  }
+}

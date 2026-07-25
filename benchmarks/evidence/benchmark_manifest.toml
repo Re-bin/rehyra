@@ -1,0 +1,102 @@
+schema_version = 1
+frozen_at = "2026-07-23"
+hyra_results_commit = "bcda2e29200fbeaeb1620acca0670cc445e8688f"
+simpletes_commit = "b7e0367b5ab19554fb40859e8069e091bb8c4ca2"
+
+[[benchmark]]
+id = "adderboard"
+group = "AI4Science"
+task = "smallest_adder"
+cost = "low_cpu"
+primary = true
+direction = "minimize"
+metric = "trainable_parameters"
+prior_best = 36.0
+hyra_target = 15.0
+comparison_status = "artifact_replay_plus_audited_35_parameter_cold_search"
+search_contract_compatible = true
+notes = "Official 15-parameter artifact requires the upstream verifier and trained-category audit; local clean search independently reached 35."
+
+[[benchmark]]
+id = "qubit_routing"
+group = "AI4Science"
+task = "swap_reduction"
+cost = "low_to_medium_cpu"
+primary = true
+direction = "minimize"
+metric = "cnot_added"
+prior_best = 269037.0
+hyra_target = 258369.0
+comparison_status = "artifact_replay_plus_cold_search_below_target"
+search_contract_compatible = true
+notes = "The four-proposal cold run improved the 72-case seed by 2.13% to 298,353, but did not match the independently replayed 258,369 public artifact."
+
+[[benchmark]]
+id = "autocorrelation_first"
+group = "AI4Science"
+task = "mathematical_construction"
+cost = "low_cpu"
+primary = false
+direction = "minimize"
+metric = "c1"
+prior_best = 1.502870
+hyra_target = 1.502850
+comparison_status = "artifact_replay_plus_cold_search_below_target"
+search_contract_compatible = true
+notes = "The two-proposal cold run improved 1.524791 to 1.514613, but did not match the independently replayed 1.502850 public artifact."
+
+[[benchmark]]
+id = "autocorrelation_second"
+group = "AI4Science"
+task = "mathematical_construction"
+cost = "low_cpu"
+primary = false
+direction = "maximize"
+metric = "r"
+prior_best = 0.962694
+hyra_target = 0.962901
+comparison_status = "artifact_replay_plus_separate_cold_search_contract_mismatch"
+search_contract_compatible = false
+notes = "The current-contract cold run improved 0.905015 to 0.916209. Published values exceed the current SimpleTES element cap; artifact replay uses scale-invariant normalization and is not a fair head-to-head."
+
+[[benchmark]]
+id = "erdos_min_overlap"
+group = "AI4Science"
+task = "mathematical_construction"
+cost = "low_cpu"
+primary = false
+direction = "minimize"
+metric = "c5"
+prior_best = 0.380868
+hyra_target = 0.380859
+comparison_status = "artifact_replay_plus_near_target_cold_search"
+search_contract_compatible = true
+notes = "The four-proposal cold run reached 0.380911848, within 0.0138% of but not equal to the 0.380859422 public artifact."
+
+[[benchmark]]
+id = "sums_diffs"
+group = "AI4Science"
+task = "mathematical_construction"
+cost = "low_cpu"
+primary = false
+direction = "maximize"
+metric = "c_a"
+prior_best = 1.14489
+hyra_target = 1.15971
+comparison_status = "artifact_replay_plus_separate_512_element_cold_search"
+search_contract_compatible = false
+notes = "Published artifact has 181,131 elements; current SimpleTES search contract caps candidates at 512. Treat artifact replay and autonomous search as different contracts."
+
+[[benchmark]]
+id = "sunspot_symbolic"
+group = "AI4Science"
+task = "symbolic_forecasting"
+cost = "very_low_cpu"
+primary = false
+direction = "maximize"
+metric = "rolling_origin_r2"
+prior_best = 0.47
+hyra_target = 0.78
+comparison_status = "artifact_replay_plus_causal_cold_search_contaminated_holdout"
+search_contract_compatible = false
+notes = "A cold run improved 0.345 to 0.597 on visible feedback and scored 0.697 raw R2 on a filesystem-sealed confirmation era. The historical holdout is public in 2026, so never use this as a fair headline comparison."

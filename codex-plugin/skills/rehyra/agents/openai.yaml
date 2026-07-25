@@ -1,0 +1,4 @@
+interface:
+  display_name: "ReHyra"
+  short_description: "Run auditable recursive optimization campaigns"
+  default_prompt: "Use $rehyra to optimize this workspace with a verified objective."

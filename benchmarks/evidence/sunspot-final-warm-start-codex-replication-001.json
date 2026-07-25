@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "evidence_level": "final_artifact_warm_start_with_sealed_confirmation_replication",
+  "task": "sunspot_symbolic",
+  "contract": {
+    "search_feedback_era": "1932-1978",
+    "sealed_confirmation_era": "1979-2025",
+    "objective": "maximize 24-month rolling-origin R2",
+    "candidate_count": 1,
+    "isolation": "local_process_advisory",
+    "contamination_warning": "Both eras are public historical data in 2026. Filesystem causality does not prove the model lacked pretraining knowledge of the confirmation era."
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "sunspot-hyra-final-smoke-002",
+    "harness_git_commit": "68afda1897a98f1ad9d64eff012af08b5ab52a1b",
+    "harness_tree_sha256": "a996fafd8beb91ce1363e83318d335c0de4806f29ba8675613a7bb95ce2f5435",
+    "maximum_proposals": 1,
+    "maximum_concurrency": 1,
+    "context_calls": 1,
+    "qualified_proposals": 1,
+    "proposal_title": "Cycle-blocked 24-step recalibration of the frozen Hyra law",
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "Tencent Hyra public final artifact",
+    "artifact_sha256": "9d113294f3420ab2a69e9e4e953304a9b5c05ffe89a8cb8525294ea1bf28ede1",
+    "visible_r2": 0.7663691741271866,
+    "visible_penalized_score": 0.7059461924537581,
+    "confirmation_r2": 0.7796665159643883,
+    "qualified": true
+  },
+  "candidate": {
+    "attempt_id": "attempt-0001",
+    "artifact_sha256": "0ebea63682de9617c1c13a780feb09153e75fae72b1fb90f9ab16f560a597b10",
+    "expression": "a + b0*x1 + b1*(x2+x3+x4+x5+x6+x7+x8+x9+x10+x11+x12) + b2*(x17+x19+x21+x23+x25+x27+x29) + b3*(x96+x100+x104+x108+x112)",
+    "params": {
+      "a": 2.993307816911642,
+      "b0": 0.6002875402797622,
+      "b1": 0.040043470986456976,
+      "b2": -0.01908259474195992,
+      "b3": 0.010791732072558862
+    },
+    "visible_r2": 0.7570623745370078,
+    "visible_penalized_score": 0.700729612212439,
+    "confirmation_r2": 0.7846946719140679,
+    "confirmation_penalized_score": 0.7596946719140679,
+    "absolute_confirmation_improvement": 0.005028155949679647,
+    "relative_confirmation_improvement_percent": 0.6449111058027368,
+    "qualified": true
+  },
+  "decision": {
+    "search_incumbent_attempt_id": "attempt-0000",
+    "search_incumbent_reason": "The candidate was worse on the visible search era.",
+    "confirmation_winner_attempt_id": "attempt-0001",
+    "confirmation_policy": "The seed and the only independently generated candidate were evaluated once after the run. Confirmation scores were not fed back into search."
+  },
+  "verification": {
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 7
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 2,
+      "audited_transcript_count": 2,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    },
+    "confirmation_evaluator": "tasks.hyra_artifacts.verify.verify_sunspot using the pinned public srfit implementation"
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 158092,
+      "cached_input_tokens": 123904,
+      "output_tokens": 5584,
+      "reasoning_output_tokens": 2554
+    },
+    "proposal": {
+      "input_tokens": 576481,
+      "cached_input_tokens": 530432,
+      "output_tokens": 14017,
+      "reasoning_output_tokens": 3368
+    }
+  },
+  "integrity": {
+    "config_sha256": "c1b984b031adcc98582782a8629320ef6af13ce7879e8e268c39f71d6656e487",
+    "task_sha256": "c5ac551bd41725c22cce17e1f16e55032547d0cc52782bddfe9fc51132e2b1cf",
+    "preregistration_sha256": "b88c50d1ab246e23090a93c2cf5ff1a2e418ac4bd53cd10c9f16df713a5cca6a",
+    "report_sha256": "012671c98579990f96df851000d23e575f704ef90759b5770ddbf925156afe74",
+    "events_sha256": "3a9849fa452b8b2f1f6b23f4a6bc7849fa6cb54d78cdef1ba5977f2fa564ff3f"
+  },
+  "verdict": "The independent one-Proposal replication produced a distinct coefficient refit that again underperformed on the visible era but exceeded the public Hyra artifact on the one-time confirmation era. Two of two independent candidates show the same directional confirmation result, subject to the public-data contamination warning."
+}

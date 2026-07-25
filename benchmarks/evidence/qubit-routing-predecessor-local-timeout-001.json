@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seed_qualification_failure",
+  "task": "qubit_routing",
+  "contract": {
+    "source": "SimpleTES",
+    "source_commit": "b7e0367b5ab19554fb40859e8069e091bb8c4ca2",
+    "suite_cases": 72,
+    "layout_trials": 20,
+    "routing_trials": 20,
+    "trial_mode": "full",
+    "objective": "minimize total added CNOTs",
+    "isolation": "local_process_advisory"
+  },
+  "seed": {
+    "source": "best_results/quantum_circuit_compilation/qubit_routing_on_superconducting_quantum_computer/qubit_routing_on_superconducting_quantum_computer_best.rs",
+    "sha256": "8c20236ac6e731872fc24365cf397cdfdb661030cc74289ebc6ca448853149c4",
+    "published_predecessor_score": 269037,
+    "workspace_tree_sha256": "bb6a7c691de026aa7a3b950d28f46cc59a746b0a03dc5058813b9e1749a79d9e"
+  },
+  "attempts": [
+    {
+      "run": "qubit-predecessor-source-frozen-001",
+      "budget_seconds": 1200,
+      "duration_seconds": 1200.1202390419785,
+      "qualified": false,
+      "failure": "router timeout during seed qualification",
+      "integrity": {
+        "config_sha256": "54e240166fc3080d3316646698060bb9fa5e6af45261bacb3cd522eeb550030f",
+        "task_sha256": "3feb9a325cf6bf667e340e631ca50f1f52561b6213672a32fff9d778f3acd185",
+        "preregistration_sha256": "a1b5d8529f5808a19e2468de768c6091830236ed3910d451063ebd6bb92a9260",
+        "events_sha256": "d6c4e63c685b3eb1e83c6a2bc9b3d44011f1f63bacda72b2672f492f5f73d3c1",
+        "run_sha256": "bbdac7b7757e5169571db43cb067679e998a942654fa9ed9b063a4e5ffefc039"
+      }
+    },
+    {
+      "run": "qubit-predecessor-source-frozen-002",
+      "budget_seconds": 1680,
+      "duration_seconds": 1680.1207981250482,
+      "qualified": false,
+      "failure": "router timeout during seed qualification",
+      "integrity": {
+        "config_sha256": "54e240166fc3080d3316646698060bb9fa5e6af45261bacb3cd522eeb550030f",
+        "task_sha256": "e742a7ff512fd1b2ca917397936ba3f19dda2f1c8d098e399a86607b66aad584",
+        "preregistration_sha256": "12a44e46c8a29af3ae7a7c23b0e57d1b9fcf23e8ab4b1b29558bdf39cde7e2d9",
+        "events_sha256": "0d48a7e35d2f380cc9f6dea892f4eb03e8f341a82fb547385b9e2091c5d845dd",
+        "run_sha256": "9fd7affb8392f5024a7ac1a049106d3fc6b7d5901744de97692658d47a1bbd43"
+      }
+    },
+    {
+      "run": "qubit-predecessor-source-frozen-003",
+      "budget_seconds": 2700,
+      "duration_seconds": 2700.1187902500387,
+      "qualified": false,
+      "failure": "router timeout during seed qualification",
+      "integrity": {
+        "config_sha256": "68b4eda8fe643309dc37e052bc37be321078cc39226d3d9ce5c9df59c6facc9f",
+        "task_sha256": "16f436cd75a33ab5704e7fda9a272664c14c0df15d64a2c34b912df031e97361",
+        "preregistration_sha256": "b9c317d3cfeda79893bf0636139778172da266c533bc0af044e6c54d5fe6da2d",
+        "events_sha256": "2805be8fc2d0e3201d77fb01a51beb65208052e577dcb1d7e45c074797b4bf25",
+        "run_sha256": "c9fbf7ad5c627d1bf996f12ca6e5c1ed7663dd46ad3416f4ec147ef6532fb5a1",
+        "offline_validation": "passed"
+      }
+    }
+  ],
+  "verdict": {
+    "agent_search_started": false,
+    "score_available": false,
+    "reason": "The exact published predecessor did not finish one full 20x20 evaluation on the local machine within progressively raised 20, 28, and 45 minute guards. Reducing trials would change the comparison contract.",
+    "next_valid_step": "Run the frozen full-suite contract on sufficiently fast hardware, or validate an evaluator acceleration as numerically and semantically equivalent before using it."
+  }
+}

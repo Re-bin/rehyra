@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "evidence_level": "cold_start_discovery_with_public_confirmation",
+  "run_name": "sunspot-codex-causal-public-spec",
+  "task": "sunspot_symbolic_causal",
+  "contract": {
+    "search_feedback_era": "1932-1978",
+    "sealed_confirmation_era": "1979-2025",
+    "objective": "maximize penalized 24-month free-running R2",
+    "isolation": "local_process_advisory",
+    "contamination_warning": "The confirmation era is filesystem-sealed from the agent but is public historical data in 2026. This is not a model-pretraining holdout."
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "search": {
+    "context_calls": 3,
+    "proposal_calls": 4,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 1092.149396
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "score": 0.3449270194830827,
+    "valid_r2": 0.3472820484061889,
+    "penalty": 0.0
+  },
+  "best": {
+    "attempt_id": "attempt-0004",
+    "expression": "c+a*x1+b*x2+d*x24",
+    "params": {
+      "c": 4.3019389394,
+      "a": 0.3817045551,
+      "b": 0.6160162265,
+      "d": -0.0544935196
+    },
+    "search_score": 0.596527829566315,
+    "train_r2": 0.5633381060596399,
+    "valid_r2": 0.6342577374018735,
+    "penalty": 0.02,
+    "qualified": true
+  },
+  "sealed_confirmation": {
+    "test_r2": 0.6967635448250007,
+    "penalty": 0.02,
+    "penalized_test_score": 0.6767635448250007,
+    "qualified": true,
+    "feedback_returned_to_agent": false
+  },
+  "relative_search_score_improvement_percent": 72.94320127784954,
+  "usage": {
+    "context": {
+      "input_tokens": 137861,
+      "cached_input_tokens": 90880,
+      "output_tokens": 4675,
+      "reasoning_output_tokens": 3049
+    },
+    "proposal": {
+      "input_tokens": 2062822,
+      "cached_input_tokens": 1885440,
+      "output_tokens": 38125,
+      "reasoning_output_tokens": 14069
+    }
+  },
+  "integrity": {
+    "config_sha256": "913302cd228d08b235c5dd6b013e4b57f54e0d5845768a322e92daeb99522be6",
+    "task_sha256": "562eb3d9baa3c368494242eb99e16b19bdc1e6aebc375a5d3e486494fdd8dc92",
+    "preregistration_sha256": "862b1ff2c3f5d0644935e06d45e9402a55a9a279748242fa396bbc9e4b15cc25",
+    "report_sha256": "4c375874f025a83559de189a4c2ec855b884db7cd0664d60cda1f9bb4c0f3869",
+    "events_sha256": "ab922a19c83a33fff5713b93cd5612e5912131368be34fb609930eec0222ad08",
+    "offline_validation": "passed"
+  },
+  "comparison_note": "The run improves its frozen seed and confirms on a causally hidden filesystem split. It does not match the public Hyra artifact's 0.779666516 and cannot support a clean generalization claim because the entire historical series may be in model pretraining data."
+}

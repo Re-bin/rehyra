@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search_replication",
+  "task": "sums_diffs",
+  "contract": {
+    "objective": "maximize C(A)",
+    "integer_bounds": [
+      -1000000,
+      1000000
+    ],
+    "minimum_cardinality": 2,
+    "maximum_cardinality": null,
+    "search_evaluator": "public-compatible floating-point FFT support counting",
+    "confirmation_evaluator": "exact integer NTT support counting modulo 998244353",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "sums-public-contract-003-state-fixed",
+    "harness_git_commit": "406973e46989e8b8229a01d360587dcaad34e70c",
+    "harness_tree_sha256": "c59f3a3938fc1a0cb856f822c9c2ca3f95c8698704f229f99b9fd41f4c020ce4",
+    "created_at": "2026-07-23T23:26:04.182607+00:00",
+    "completed_at": "2026-07-24T03:45:10.341870+00:00",
+    "maximum_proposals": 4,
+    "maximum_concurrency": 1,
+    "context_calls": 5,
+    "qualified_proposals": 4,
+    "failed_proposals": 0,
+    "resume_note": "A DNS outage interrupted the run between completed steps. Resume preserved the frozen run directory and did not repeat completed proposals.",
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "SimpleTES published predecessor",
+    "construction_sha256": "d5cbe4aff970312ecf17f049bbee7fbcfe5ee2ca4b87d44790855d862b4051a5",
+    "set_size": 506,
+    "sumset_size": 3551,
+    "diffset_size": 2775,
+    "c_a": 1.1448868597133133,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0004",
+    "candidate_source_sha256": "37767b64c5e60ff727abdef8834b506fec8e9aa78c72cf2f4daa0ba917fc1c8e",
+    "construction_sha256": "17e5f84fe097f0bfbb12bce07d64476cabb7138a1177017a4c096df5395a7227",
+    "set_size": 544521,
+    "minimum": -998862,
+    "maximum": 998864,
+    "sumset_size": 3995080,
+    "diffset_size": 3084423,
+    "c_a": 1.1491736840731577,
+    "absolute_improvement_over_seed": 0.004286824359844399,
+    "relative_improvement_over_seed_percent": 0.3744321391650818,
+    "qualified": true
+  },
+  "public_hyra_artifact": {
+    "repository": "Tencent-Hunyuan/hyra-results",
+    "repository_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+    "artifact": "AI4Science/sums_diffs/solution.json",
+    "artifact_sha256": "81181d03f5ed08f6a71da02913d22de0d4d93746a84debd633ab52ac1bbb83c7",
+    "c_a": 1.1597147989125474,
+    "absolute_gap": -0.010541114839389687,
+    "relative_gap_percent": -0.9089402712868733,
+    "matched_or_exceeded": false
+  },
+  "verification": {
+    "frozen_search_evaluator": {
+      "passed": true,
+      "c_a": 1.1491736840731577
+    },
+    "exact_integer_ntt": {
+      "passed": true,
+      "verifier": "tasks/simpletes/verify_sums_exact.cpp",
+      "verifier_sha256": "64965ec116db27ed35c8ab66a1ca9a9362e555834bd79a80c401eb0be51eab28",
+      "candidate_c_a": 1.1491736840731577
+    },
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 39
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 9,
+      "audited_transcript_count": 9,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    }
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 914412,
+      "cached_input_tokens": 787456,
+      "output_tokens": 24340,
+      "reasoning_output_tokens": 12910
+    },
+    "proposal": {
+      "input_tokens": 3916098,
+      "cached_input_tokens": 3655936,
+      "output_tokens": 59599,
+      "reasoning_output_tokens": 25287
+    }
+  },
+  "integrity": {
+    "config_sha256": "d7e04beac1eff2e3591a42fe85e5f464ad7f9203a99c5d528db4492731b0b6f5",
+    "task_sha256": "774ceba5148b7305cc73ef98b9b211c8bc6035c01b1d1e8f194ff957796ac9fc",
+    "preregistration_sha256": "8b2bb8092746eed3265588fd66b880853980deab96f86f99e9c16d8714f17150",
+    "report_sha256": "5cda7c52022b4a212883c0121332b304e10b2cf26e822fa8d95a262ed864bdd0",
+    "events_sha256": "5175d347d31cceb88c1f2d98b4ac3ca7cc834a62025f0ce3f8443165f853ea7e"
+  },
+  "verdict": "The independent four-Proposal replication improved the same pinned predecessor monotonically but did not reproduce the first campaign's Hyra-beating result. This is direct evidence of search-path variance: the earlier frozen result remains valid, while one successful run is insufficient to claim reliable superiority."
+}

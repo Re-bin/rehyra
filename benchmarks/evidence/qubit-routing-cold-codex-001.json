@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "evidence_level": "cold_start_discovery",
+  "run_name": "qubit-routing-codex-public-spec",
+  "task": "qubit_routing",
+  "contract": {
+    "source": "SimpleTES",
+    "suite_cases": 72,
+    "layout_trials": 20,
+    "routing_trials": 20,
+    "objective": "minimize total added CNOTs",
+    "qualification": "all circuits pass topology and semantic-equivalence checks",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "search": {
+    "context_calls": 3,
+    "proposal_calls": 4,
+    "maximum_concurrency": 2,
+    "evaluator_cycles": 1,
+    "evaluator_version": "fixed",
+    "wall_time_seconds": 1617.306699
+  },
+  "seed": {
+    "attempt_id": "attempt-0000",
+    "cnot_added": 304854,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0004",
+    "cnot_added": 298353,
+    "ok_cases": 72,
+    "failed_cases": 0,
+    "qualified": true
+  },
+  "relative_improvement_percent": 2.1324962113011474,
+  "public_hyra_artifact": {
+    "cnot_added": 258369,
+    "gap_cnot": 39984,
+    "candidate_above_target_percent": 15.475540796302962,
+    "matched_by_cold_search": false
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 293844,
+      "cached_input_tokens": 180736,
+      "output_tokens": 9461,
+      "reasoning_output_tokens": 6618
+    },
+    "proposal": {
+      "input_tokens": 2367287,
+      "cached_input_tokens": 2125824,
+      "output_tokens": 48019,
+      "reasoning_output_tokens": 24366
+    }
+  },
+  "integrity": {
+    "config_sha256": "54e240166fc3080d3316646698060bb9fa5e6af45261bacb3cd522eeb550030f",
+    "task_sha256": "c2d1540730ae5022cef067fad86a922dd719f97707f30f6719e2aee5d509c6d3",
+    "preregistration_sha256": "6deb2d32b6bbf78d5e98a2650dc74445941fdef42b6189d6b4b109f51e990b7e",
+    "report_sha256": "5804cabb2c670fc8dc99aa55f4fdc257b00b6722169718d6532122538ff1e785",
+    "events_sha256": "e7e6e90b7db07e8dd24725cf42ebf6d1e6c9a15a3ebbf2efdd7a832de67100ac",
+    "offline_validation": "passed"
+  },
+  "comparison_note": "The cold run autonomously improved the frozen seed under the full 72-case contract. It did not rediscover or exceed the public Hyra artifact, whose independent artifact replay remains separate evidence."
+}

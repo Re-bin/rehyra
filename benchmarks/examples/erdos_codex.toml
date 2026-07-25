@@ -1,0 +1,15 @@
+[run]
+name = "erdos-codex-public-spec"
+task_spec = "../../task-data/low-cost-science/erdos_min_overlap/task.json"
+max_proposals = 4
+max_concurrency = 2
+queue_target = 2
+context_batch_size = 2
+evaluator_cycles = 1
+
+[agent]
+backend = "codex"
+model = "gpt-5.6-sol"
+reasoning_effort = "high"
+context_timeout_seconds = 900
+proposal_timeout_seconds = 1800

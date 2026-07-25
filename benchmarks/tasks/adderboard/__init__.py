@@ -1,0 +1,2 @@
+"""AdderBoard task adapter."""
+

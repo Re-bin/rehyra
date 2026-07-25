@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "evidence_level": "real_agent_bilevel_integration",
+  "run_name": "generated-evaluator-toy-codex",
+  "task": "generated-evaluator-toy",
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "observed_flow": [
+    "evaluator_architect_initial",
+    "evaluator_critic_initial",
+    "seed_evaluation",
+    "context",
+    "proposal",
+    "candidate_evaluation",
+    "evaluator_architect_evolution",
+    "evaluator_critic_evolution",
+    "context_voluntary_stop",
+    "offline_replay"
+  ],
+  "initial_evaluator": {
+    "version_id": "evaluator-0000",
+    "status": "created",
+    "sha256": "265a176bc3d25dab74bd2a16fb9501ff851b85cf11d31d1daf1f38bb13922e95",
+    "architect_approved": true,
+    "critic_approved": true
+  },
+  "search": {
+    "seed": {
+      "x": 0,
+      "score": -18769
+    },
+    "best": {
+      "x": 137,
+      "score": 0,
+      "qualified": true,
+      "global_optimum": true
+    },
+    "proposal_calls": 1,
+    "context_calls": 2,
+    "terminal_reason": "agent_stop",
+    "stop_reason": "The incumbent reached the unique analytic optimum, so the Context Agent voluntarily returned unused proposal budget."
+  },
+  "evaluator_evolution": {
+    "candidate_version_id": "evaluator-0001",
+    "architect_changed": false,
+    "critic_approved": false,
+    "critic_blocker": "No evaluator or objective headroom remains after x=137 reaches the provable global maximum.",
+    "decision": "rejected_critic",
+    "active_version_after_rejection": "evaluator-0000"
+  },
+  "crash_resume": {
+    "trigger": "The pre-fix runner treated an evolution-time Critic rejection as a fatal campaign error.",
+    "fix": "A rejected evolved evaluator now preserves the last approved evaluator; completed Architect and Critic calls are atomically recorded and recoverable.",
+    "recovered_without_repeating_completed_evaluator_calls": true,
+    "final_status": "completed"
+  },
+  "integrity": {
+    "config_sha256": "c3802d4890ed535761ccd5217be917d8b8b3a7059497f5abeb804895e234effe",
+    "task_sha256": "8583ed66eb127ea845c4aa7b43165fd9c382fefe68c9f3cb8318dacc84b34fd3",
+    "report_sha256": "8ac35ec38adb04f5b797ac3ef8694fde94f584ae5afcb02b333f38f592865707",
+    "events_sha256": "41bc5e0574abf908c3411d24affe77b2c521e41c8ec3a34010bd60114b36c9f9",
+    "preregistration_sha256": "b438061ea01737a96899a24161b366d64c8716f5cc6baaf8fbc8fc6a403507f3",
+    "offline_validation": "passed"
+  },
+  "isolation": "local_process_advisory"
+}

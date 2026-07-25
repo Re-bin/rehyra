@@ -1,0 +1,5 @@
+# Recorded in evidence/hyra-public-artifact-replay.json.
+numpy==2.4.6
+qiskit==1.2.0
+qiskit-qasm3-import==0.6.0
+scipy==1.17.1

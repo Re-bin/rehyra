@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "evidence_level": "predecessor_seeded_search",
+  "task": "sums_diffs",
+  "contract": {
+    "objective": "maximize C(A)",
+    "integer_bounds": [
+      -1000000,
+      1000000
+    ],
+    "minimum_cardinality": 2,
+    "maximum_cardinality": null,
+    "search_evaluator": "public-compatible floating-point FFT support counting",
+    "confirmation_evaluator": "exact integer NTT support counting modulo 998244353",
+    "isolation": "local_process_advisory"
+  },
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "external_tools": "disabled"
+  },
+  "search": {
+    "run": "sums-public-contract-002",
+    "harness_git_commit": "fe0cad9bc9c892ee706b28a73916f5c97f8516ef",
+    "harness_tree_sha256": "cd5f2992d383ded7ab3c7065f24327e749f0b905d7533240b8e64167f99d712e",
+    "created_at": "2026-07-23T23:14:50.756242+00:00",
+    "completed_at": "2026-07-24T03:23:05.831040+00:00",
+    "maximum_proposals": 4,
+    "maximum_concurrency": 1,
+    "context_calls": 5,
+    "qualified_proposals": 3,
+    "failed_proposals": 1,
+    "failure_note": "attempt-0003 is retained as an infrastructure failure after a DNS outage; the frozen run resumed without repeating completed attempts",
+    "terminal_reason": "proposal_budget_exhausted"
+  },
+  "seed": {
+    "source": "SimpleTES published predecessor",
+    "construction_sha256": "d5cbe4aff970312ecf17f049bbee7fbcfe5ee2ca4b87d44790855d862b4051a5",
+    "set_size": 506,
+    "sumset_size": 3551,
+    "diffset_size": 2775,
+    "c_a": 1.1448868597133133,
+    "qualified": true
+  },
+  "best": {
+    "attempt_id": "attempt-0004",
+    "candidate_source_sha256": "522ecfa40565a505d19f4c40d51fd7700d59e33ef8b852c5871743b2bf1d66f9",
+    "construction_sha256": "ee4716861bb851525e9a4238ca5555422b3ebc159303ae78ad020f2d34c8f65f",
+    "set_size": 502004,
+    "minimum": -1000000,
+    "maximum": 999997,
+    "sumset_size": 3999449,
+    "diffset_size": 3003457,
+    "c_a": 1.1600932741088714,
+    "absolute_improvement_over_seed": 0.015206414395558143,
+    "relative_improvement_over_seed_percent": 1.3282023692162914,
+    "qualified": true
+  },
+  "public_hyra_artifact": {
+    "repository": "Tencent-Hunyuan/hyra-results",
+    "repository_commit": "bcda2e29200fbeaeb1620acca0670cc445e8688f",
+    "artifact": "AI4Science/sums_diffs/solution.json",
+    "artifact_sha256": "81181d03f5ed08f6a71da02913d22de0d4d93746a84debd633ab52ac1bbb83c7",
+    "set_size": 181131,
+    "minimum": 0,
+    "maximum": 719719,
+    "sumset_size": 1439434,
+    "diffset_size": 1081975,
+    "c_a": 1.1597147989125474,
+    "absolute_gap": 0.00037847519632405735,
+    "relative_improvement_percent": 0.032635195884278545,
+    "matched_or_exceeded": true
+  },
+  "verification": {
+    "frozen_search_evaluator": {
+      "passed": true,
+      "c_a": 1.1600932741088714
+    },
+    "exact_integer_ntt": {
+      "passed": true,
+      "verifier": "tasks/simpletes/verify_sums_exact.cpp",
+      "verifier_sha256": "64965ec116db27ed35c8ab66a1ca9a9362e555834bd79a80c401eb0be51eab28",
+      "candidate_c_a": 1.1600932741088714,
+      "published_hyra_c_a": 1.1597147989125474
+    },
+    "offline_run_validation": {
+      "passed": true,
+      "checked_artifacts": 36
+    },
+    "agent_evidence_audit": {
+      "passed": true,
+      "request_count": 9,
+      "audited_transcript_count": 9,
+      "forbidden_event_count": 0,
+      "violation_count": 0
+    },
+    "target_leakage_scan": {
+      "passed": true,
+      "patterns": [
+        "1.159714798",
+        "1.159714799",
+        "181131",
+        "181,131"
+      ],
+      "excluded_generated_files": [
+        "captured_state.json",
+        "events.jsonl",
+        "*.pyc"
+      ],
+      "matching_files": []
+    }
+  },
+  "usage": {
+    "context": {
+      "input_tokens": 1003391,
+      "cached_input_tokens": 878592,
+      "output_tokens": 24320,
+      "reasoning_output_tokens": 12157
+    },
+    "proposal": {
+      "input_tokens": 2515322,
+      "cached_input_tokens": 2318080,
+      "output_tokens": 38852,
+      "reasoning_output_tokens": 15918
+    }
+  },
+  "integrity": {
+    "config_sha256": "d7e04beac1eff2e3591a42fe85e5f464ad7f9203a99c5d528db4492731b0b6f5",
+    "task_sha256": "774ceba5148b7305cc73ef98b9b211c8bc6035c01b1d1e8f194ff957796ac9fc",
+    "preregistration_sha256": "948b73e73f0789169e46c35c2334b60be48620ed534d875a166f61d19673a0c5",
+    "report_sha256": "025f6ffe5f02735a92119fb7c71996baa1ab379062f85fae2a1165a4974d4bf8",
+    "events_sha256": "e9f3bcd3d038fba61f3bc06e54c5f473be42f5ae31ca9762d93e2864c3d6ad99"
+  },
+  "verdict": "A four-Proposal public-contract search starting from the pinned predecessor autonomously produced a different construction that exceeds Tencent's published Hyra artifact. The score and both support sizes agree between the frozen floating-point FFT evaluator and an independent exact integer NTT verifier. This is a comparison to the 2026-07-10 public artifact, not an unqualified world-record claim."
+}

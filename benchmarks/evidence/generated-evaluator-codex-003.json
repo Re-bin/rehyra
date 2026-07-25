@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "evidence_level": "clean_real_agent_bilevel_integration",
+  "run_name": "generated-evaluator-toy-codex",
+  "task": "generated-evaluator-toy",
+  "agent": {
+    "backend": "codex",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high"
+  },
+  "isolation": {
+    "run_outside_source_checkout": true,
+    "execution": "local_process_advisory",
+    "agent_feedback_paths_redacted": true
+  },
+  "observed_flow": [
+    "evaluator_architect_initial",
+    "evaluator_critic_initial_approved",
+    "seed_evaluation",
+    "context",
+    "proposal",
+    "candidate_evaluation",
+    "evaluator_architect_evolution_unchanged",
+    "evaluator_critic_evolution_approved",
+    "context_voluntary_stop",
+    "offline_replay"
+  ],
+  "evaluator": {
+    "initial_version": "evaluator-0000",
+    "initial_status": "created",
+    "evolved_version": "evaluator-0001",
+    "evolved_status": "unchanged",
+    "active_version": "evaluator-0000",
+    "sha256": "b7a923ec313b9d4dbfaabd2bbed3a47d8e75177860c439464b9fcb39a90817a1",
+    "architect_contract_preserved": true,
+    "both_critic_audits_approved": true
+  },
+  "search": {
+    "seed": {
+      "x": 0,
+      "score": -18769
+    },
+    "best": {
+      "x": 137,
+      "score": 0,
+      "qualified": true,
+      "global_optimum": true
+    },
+    "proposal_calls": 1,
+    "context_calls": 2,
+    "terminal_reason": "agent_stop",
+    "unused_proposal_budget": 1
+  },
+  "usage": {
+    "architect_initial": {
+      "input_tokens": 204666,
+      "cached_input_tokens": 174080,
+      "output_tokens": 3998,
+      "reasoning_output_tokens": 1970
+    },
+    "critic_initial": {
+      "input_tokens": 56706,
+      "cached_input_tokens": 36352,
+      "output_tokens": 820,
+      "reasoning_output_tokens": 485
+    },
+    "architect_evolution": {
+      "input_tokens": 81868,
+      "cached_input_tokens": 57600,
+      "output_tokens": 1198,
+      "reasoning_output_tokens": 455
+    },
+    "critic_evolution": {
+      "input_tokens": 38962,
+      "cached_input_tokens": 18176,
+      "output_tokens": 709,
+      "reasoning_output_tokens": 439
+    },
+    "context": {
+      "input_tokens": 37706,
+      "cached_input_tokens": 17152,
+      "output_tokens": 338,
+      "reasoning_output_tokens": 106
+    },
+    "proposal": {
+      "input_tokens": 76488,
+      "cached_input_tokens": 54528,
+      "output_tokens": 516,
+      "reasoning_output_tokens": 67
+    }
+  },
+  "integrity": {
+    "config_sha256": "c3802d4890ed535761ccd5217be917d8b8b3a7059497f5abeb804895e234effe",
+    "task_sha256": "8583ed66eb127ea845c4aa7b43165fd9c382fefe68c9f3cb8318dacc84b34fd3",
+    "report_sha256": "1ae43688bc98cf14f14ab6f1abd389ee9555016f4ed1bbdf699c257ce6c4ed42",
+    "events_sha256": "6c4bea79d0ef4133903587a0d08bb465f27d34a0d68b40ada059d4aba262df3e",
+    "preregistration_sha256": "6af1e72b340cfdede58390a49987d2aa52541a532977aeb3f534a1da13096fcb",
+    "offline_validation": "passed"
+  }
+}

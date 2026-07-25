@@ -1,0 +1,30 @@
+{
+  "actual_parameters": 36,
+  "declared_parameters": 36,
+  "direct_input_addition_detected": false,
+  "metadata_matches_actual": true,
+  "public_accuracy": 100.0,
+  "public_passed": 10010,
+  "public_seed": 2025,
+  "public_total": 10010,
+  "qualified": true,
+  "rule_audit": "automatic_partial_manual_final_required",
+  "shadow_min_accuracy": 100.0,
+  "shadow_results": [
+    {
+      "accuracy": 100.0,
+      "passed": 10010,
+      "qualified": true,
+      "seed": 100003,
+      "total": 10010
+    },
+    {
+      "accuracy": 100.0,
+      "passed": 10010,
+      "qualified": true,
+      "seed": 100019,
+      "total": 10010
+    }
+  ]
+}
+
