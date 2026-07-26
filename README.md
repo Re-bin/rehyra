@@ -313,7 +313,7 @@ ReHyra:
 
 ```bibtex
 @software{rehyra2026,
-  author  = {{Re-bin Contributors}},
+  author  = {Xubin Ren},
   title   = {ReHyra: An Open, Clean-Room Implementation of Hyra's Recursive Discovery Loop},
   year    = {2026},
   url     = {https://github.com/Re-bin/rehyra},
