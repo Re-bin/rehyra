@@ -41,6 +41,37 @@ outer Architect → Critic loop implements the orange **eval evolution** path:
 it can create or improve an evaluator when a task does not already provide a
 fixed one.
 
+## Agent runtimes
+
+ReHyra owns the recursive loop; the Agent runtime only executes Context and
+Proposal calls. Two native backends are included:
+
+- **Codex** for a tightly integrated coding-Agent runtime.
+- **[nanobot](https://github.com/HKUDS/nanobot)**, an open-source,
+  ultra-lightweight Agent runtime that can use the same model through a small,
+  self-hostable stack.
+
+Both backends receive the same role prompts, fresh workspaces, budgets, and
+output contracts. The evaluator and promotion rule do not change, which also
+makes runtime ablations possible without changing the task.
+
+Select the runtime in the run configuration:
+
+```toml
+# Codex
+[agent]
+backend = "codex"
+model = "gpt-5.6-sol"
+reasoning_effort = "high"
+```
+
+```toml
+# nanobot (install with: pip install nanobot-ai)
+[agent]
+backend = "nanobot"
+model = "your-configured-model"
+```
+
 ## Repository map
 
 | Path | One responsibility |
