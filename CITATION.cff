@@ -7,7 +7,8 @@ title: "ReHyra: An Open, Clean-Room Implementation of Hyra's Recursive Discovery
 type: software
 license: Apache-2.0
 authors:
-  - name: Re-bin Contributors
+  - family-names: Ren
+    given-names: Xubin
 version: 0.3.0
 date-released: 2026-07-25
 repository-code: "https://github.com/Re-bin/rehyra"
