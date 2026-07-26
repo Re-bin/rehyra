@@ -258,20 +258,36 @@ instructions.
 - Codex, Nanobot, and shell-free command providers.
 - Adapters for the seven low-cost public Hyra tasks.
 
-## Current evidence
+## Results at a glance
 
-| Experiment | Result |
-|---|---|
-| Public artifact replay | 7/7 results matched at published precision |
-| Real Agent search | 7/7 tasks completed Context → Proposal → evaluation → feedback |
-| Sums-vs-Diffs | One run reached 1.160093274 vs. public 1.159714799; an independent replication missed |
-| Sunspot warm continuation | Improved the confirmation score in 3/3 one-Proposal runs |
-| Core verification | 74 dependency-light tests + 5 science-adapter tests, with sealed evidence validation |
+### Published results: 7/7 independently reproduced
 
-These are different claims. Artifact replay verifies an artifact and evaluator;
-it does not demonstrate autonomous discovery. A single winning search artifact
-does not demonstrate reliable superiority. Sunspot is filesystem-causal, but
-not a clean temporal-generalization claim because the series is public.
+ReHyra re-evaluated Hyra's seven public low-cost artifacts with pinned,
+independent evaluators. Arrows show the objective direction.
+
+| Task | Hyra public | ReHyra replay |
+|---|---:|---:|
+| First Autocorrelation C1 ↓ | 1.502850 | 1.502850 |
+| Second Autocorrelation R ↑ | 0.962901 | 0.962901 |
+| Erdős Minimum Overlap C5 ↓ | 0.380859 | 0.380859 |
+| Sums-vs-Diffs C(A) ↑ | 1.15971 | 1.15971 |
+| Qubit Routing added CNOTs ↓ | 258,369 | 258,369 |
+| Sunspot R² ↑ | 0.780 | 0.780 |
+| Smallest Adder parameters ↓ | 15 | 15 |
+
+### Agent-driven search
+
+| Experiment | Result | What it establishes |
+|---|---|---|
+| All seven tasks | 7/7 completed Context → Proposal → evaluation → feedback | The complete recursive loop runs across every adapter |
+| Sums-vs-Diffs | Best run: **1.1601** vs. Hyra **1.1597**; independent rerun: 1.1492 | One verified win, but not yet a reliable search advantage |
+| Sunspot warm continuation | **0.7879**, **0.7847**, and **0.7823** vs. seed 0.7797 | 3/3 one-Proposal runs improved the confirmation score |
+
+Artifact replay verifies the published artifacts and evaluators; it is not
+autonomous rediscovery. Likewise, Sunspot demonstrates repeatable
+filesystem-causal improvement, not clean temporal generalization, because the
+full historical series is public. The repository also passes 79 model-free and
+science-adapter tests with sealed evidence validation.
 
 Exact scores, budgets, failures, and evidence hashes are recorded in
 [benchmarks/docs/RESULTS.md](benchmarks/docs/RESULTS.md). Exact solution source
